@@ -10,14 +10,17 @@ export function useCounter(
 
   useEffect(() => {
     if (!isVisible) return;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 4);
-      setCount(Math.round(eased * target));
-      if (p < 1) requestAnimationFrame(tick);
+    const animationStart = performance.now();
+    const animateCount = (currentTime: number) => {
+      const animationProgress = Math.min(
+        (currentTime - animationStart) / duration,
+        1,
+      );
+      const easedProgress = 1 - Math.pow(1 - animationProgress, 4);
+      setCount(Math.round(easedProgress * target));
+      if (animationProgress < 1) requestAnimationFrame(animateCount);
     };
-    requestAnimationFrame(tick);
+    requestAnimationFrame(animateCount);
   }, [isVisible, target, duration]);
 
   return count;

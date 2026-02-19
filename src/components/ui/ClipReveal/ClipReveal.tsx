@@ -25,11 +25,14 @@ export default function ClipReveal({
 }: Props) {
   const { ref, isVisible } = useInView<HTMLSpanElement>();
 
-  const vis = forceVisible || isVisible;
-
-  const cls = classNames(s.clip, delayMap[delay], vis && s.visible);
+  const isElementVisible = forceVisible || isVisible;
+  const revealClassName = classNames(
+    s.clip,
+    delayMap[delay],
+    isElementVisible && s.visible,
+  );
   return (
-    <span ref={ref} className={cls}>
+    <span ref={ref} className={revealClassName}>
       <span>{children}</span>
     </span>
   );

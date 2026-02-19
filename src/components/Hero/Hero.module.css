@@ -22,6 +22,9 @@
 .text {
   max-width: 680px;
 }
+.heroLabel {
+  margin-bottom: 14px;
+}
 .enter {
   opacity: 0;
   transition: opacity 0.85s ease-out;

@@ -5,19 +5,21 @@ export function useScrollProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
+    let isFrameRequested = false;
+    const updateProgressOnScroll = () => {
+      if (!isFrameRequested) {
         requestAnimationFrame(() => {
-          const h = document.documentElement.scrollHeight - window.innerHeight;
-          setProgress(h > 0 ? window.scrollY / h : 0);
-          ticking = false;
+          const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          setProgress(scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0);
+          isFrameRequested = false;
         });
-        ticking = true;
+        isFrameRequested = true;
       }
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", updateProgressOnScroll, { passive: true });
+    return () =>
+      window.removeEventListener("scroll", updateProgressOnScroll);
   }, []);
 
   return progress;

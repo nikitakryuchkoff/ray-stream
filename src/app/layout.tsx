@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
+import { SITE_URL } from "@/constants/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -9,8 +10,6 @@ const dmSans = DM_Sans({
   variable: "--font",
   display: "swap",
 });
-
-const SITE_URL = "https://raystream.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

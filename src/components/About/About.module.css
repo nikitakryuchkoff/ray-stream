@@ -6,6 +6,7 @@
   grid-template-columns: 1fr 1fr;
   gap: clamp(40px, 6vw, 100px);
   align-items: start;
+  margin-top: clamp(36px, 5vh, 56px);
 }
 .textCol blockquote {
   font-size: clamp(1.35rem, 2.2vw, 1.9rem);
@@ -33,6 +34,9 @@
   font-size: 0.86rem;
   color: var(--text-s);
   line-height: 1.8;
+}
+.secondaryParagraph {
+  margin-top: 12px;
 }
 .metrics {
   display: grid;

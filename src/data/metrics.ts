@@ -1,7 +1,9 @@
+import type { TranslationKey } from "@/content/types";
+
 export interface Metric {
   target: number;
   suffix: string;
-  labelKey: string;
+  labelKey: TranslationKey;
 }
 
 export const aboutMetrics: Metric[] = [

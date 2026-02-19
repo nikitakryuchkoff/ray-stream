@@ -59,3 +59,4 @@ export interface Content {
 }
 
 export type Translations = Content;
+export type TranslationKey = keyof Content;

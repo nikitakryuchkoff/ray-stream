@@ -9,31 +9,14 @@ import Geography from "@/components/Geography/Geography";
 import Partners from "@/components/Partners/Partners";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "RayStream International Limited",
-  url: "https://raystream.com",
-  description:
-    "Global sourcing, lighting audit and professional lighting supply from Asia & Europe.",
-  areaServed: ["CN", "AE", "TR", "UZ", "KZ", "HK"],
-  knowsAbout: [
-    "Professional lighting",
-    "Lighting engineering",
-    "LED technology",
-    "Lighting audit",
-    "Industrial lighting",
-    "Architectural lighting",
-  ],
-};
+import { ORGANIZATION_JSON_LD } from "@/constants/site";
 
 export default function RootPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
       />
       <ScrollProgress />
       <Header t={content} />

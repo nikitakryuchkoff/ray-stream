@@ -2,18 +2,12 @@ import type { Translations } from "@/content/types";
 import { geoMetrics } from "@/data/metrics";
 import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
+import { useGeographyDescription } from "@/hooks/useGeographyDescription";
 import WorldMap from "./WorldMap";
 import s from "./Geography.module.css";
 
 export default function Geography({ t }: { t: Translations }) {
-  const [firstSentence, ...tailParts] = t.geo_desc.split(". ");
-  const hasTail = tailParts.length > 0;
-  const leadText = hasTail
-    ? firstSentence.endsWith(".")
-      ? firstSentence
-      : `${firstSentence}.`
-    : t.geo_desc;
-  const tailText = hasTail ? tailParts.join(". ") : "";
+  const { leadText, tailText } = useGeographyDescription(t.geo_desc);
 
   return (
     <section className={s.section} id="geo" data-header-theme="dark">
@@ -38,13 +32,13 @@ export default function Geography({ t }: { t: Translations }) {
           </div>
         </Reveal>
         <div className={s.stats}>
-          {geoMetrics.map((m, i) => (
-            <Reveal key={m.labelKey} delay={i}>
+          {geoMetrics.map((metric, index) => (
+            <Reveal key={metric.labelKey} delay={index}>
               <div className={s.stat}>
                 <div className={s.statVal}>
-                  <Counter target={m.target} suffix={m.suffix} />
+                  <Counter target={metric.target} suffix={metric.suffix} />
                 </div>
-                <div className={s.statLabel}>{(t as any)[m.labelKey]}</div>
+                <div className={s.statLabel}>{t[metric.labelKey]}</div>
               </div>
             </Reveal>
           ))}

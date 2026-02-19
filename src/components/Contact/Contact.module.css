@@ -4,8 +4,11 @@
 }
 .inner {
   max-width: 540px;
-  margin: 0 auto;
+  margin: clamp(36px, 5vh, 56px) auto 0;
   text-align: center;
+}
+.sectionLabel {
+  margin-bottom: 10px;
 }
 .inner h2 {
   font-weight: 400;

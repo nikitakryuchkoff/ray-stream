@@ -36,16 +36,16 @@ export default function Reveal({
   forceVisible = false,
 }: Props) {
   const { ref, isVisible } = useInView<HTMLDivElement>();
-  const vis = forceVisible || isVisible;
-  const cls = classNames(
+  const isElementVisible = forceVisible || isVisible;
+  const revealClassName = classNames(
     variantMap[variant],
     delayMap[delay],
-    vis && s.visible,
+    isElementVisible && s.visible,
     className,
   );
 
   return (
-    <div ref={ref} className={cls}>
+    <div ref={ref} className={revealClassName}>
       {children}
     </div>
   );

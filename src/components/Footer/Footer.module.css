@@ -11,6 +11,17 @@
   flex-wrap: wrap;
   gap: 14px;
 }
+.logo {
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.logoSub {
+  font-weight: 300;
+  opacity: 0.35;
+  margin-left: 3px;
+}
 .links {
   display: flex;
   gap: 20px;

@@ -1,0 +1,1 @@
+export const PARTNER_MARQUEE_REPEAT_COUNT = 4;

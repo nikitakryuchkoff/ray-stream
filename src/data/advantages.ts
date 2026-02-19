@@ -1,7 +1,9 @@
+import type { TranslationKey } from "@/content/types";
+
 export interface Advantage {
   num: string;
-  titleKey: string;
-  textKey: string;
+  titleKey: TranslationKey;
+  textKey: TranslationKey;
 }
 
 export const advantages: Advantage[] = [
