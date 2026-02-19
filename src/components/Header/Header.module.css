@@ -156,7 +156,7 @@
 }
 
 .mobileNav {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 99;
@@ -165,7 +165,15 @@
   align-items: center;
   justify-content: center;
   gap: 28px;
-  transition: background 0.35s var(--ease);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.99);
+  transition:
+    opacity 0.32s var(--ease),
+    transform 0.38s var(--ease),
+    visibility 0s linear 0.38s,
+    background 0.35s var(--ease);
 }
 .mobileNavDark {
   background: rgba(0, 0, 0, 0.95);
@@ -176,7 +184,14 @@
   color: var(--text);
 }
 .mobileNavOpen {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.28s var(--ease),
+    transform 0.36s var(--ease),
+    visibility 0s;
 }
 .mobileNavLink {
   font-size: 1.1rem;
@@ -188,9 +203,16 @@
   font-family: var(--font);
   color: inherit;
   position: relative;
+  opacity: 0;
+  transform: translateY(8px);
   transition:
     color 0.25s var(--ease),
-    transform 0.25s var(--ease);
+    transform 0.32s var(--ease),
+    opacity 0.32s var(--ease);
+}
+.mobileNavOpen .mobileNavLink {
+  opacity: 1;
+  transform: translateY(0);
 }
 .mobileNavLink::after {
   content: "";
@@ -236,5 +258,11 @@
   }
   .burger {
     display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileNav {
+    display: none;
   }
 }
