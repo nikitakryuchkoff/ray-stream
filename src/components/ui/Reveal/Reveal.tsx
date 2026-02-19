@@ -1,32 +1,21 @@
 "use client";
+import { default as classNames } from "classnames";
 import type { ReactNode } from "react";
 import { useInView } from "@/hooks";
-import { classNames } from "@/utils";
-import s from "./Reveal.module.css";
-
-type Variant = "up" | "left" | "scale";
+import {
+  revealDelayClassMap,
+  revealVariantClassMap,
+} from "./Reveal.const";
+import type { RevealVariant } from "./Reveal.typed";
+import styles from "./Reveal.module.css";
 
 interface Props {
   children: ReactNode;
-  variant?: Variant;
+  variant?: RevealVariant;
   delay?: number;
   className?: string;
   forceVisible?: boolean;
 }
-
-const variantMap: Record<Variant, string> = {
-  up: s.reveal,
-  left: s.slideL,
-  scale: s.scaleIn,
-};
-
-const delayMap: Record<number, string> = {
-  1: s.d1,
-  2: s.d2,
-  3: s.d3,
-  4: s.d4,
-  5: s.d5,
-};
 
 const Reveal = ({
   children,
@@ -37,10 +26,11 @@ const Reveal = ({
 }: Props) => {
   const { ref, isVisible } = useInView<HTMLDivElement>();
   const isElementVisible = forceVisible || isVisible;
+
   const revealClassName = classNames(
-    variantMap[variant],
-    delayMap[delay],
-    isElementVisible && s.visible,
+    revealVariantClassMap[variant],
+    revealDelayClassMap[delay],
+    isElementVisible && styles.visible,
     className,
   );
 

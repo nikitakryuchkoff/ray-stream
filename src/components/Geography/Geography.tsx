@@ -3,15 +3,15 @@ import type { Translations } from "@/content";
 import { geoMetrics } from "@/data";
 import { useGeographyDescription } from "@/hooks";
 import { WorldMap } from "./WorldMap";
-import s from "./Geography.module.css";
+import styles from "./Geography.module.css";
 
 const Geography = ({ t }: { t: Translations }) => {
   const { leadText, tailText } = useGeographyDescription(t.geo_desc);
 
   return (
-    <section className={s.section} id="geo" data-header-theme="dark">
+    <section className={styles.section} id="geo" data-header-theme="dark">
       <div className="wrap">
-        <div className={s.header}>
+        <div className={styles.header}>
           <Reveal>
             <p className="label label-l">{t.geo_label}</p>
           </Reveal>
@@ -20,24 +20,24 @@ const Geography = ({ t }: { t: Translations }) => {
           </Reveal>
         </div>
         <Reveal delay={2}>
-          <p className={s.desc}>
-            <span className={s.descLead}>{leadText}</span>
+          <p className={styles.desc}>
+            <span className={styles.descLead}>{leadText}</span>
             {tailText ? <> {tailText}</> : null}
           </p>
         </Reveal>
         <Reveal delay={3}>
-          <div className={s.mapWrap}>
+          <div className={styles.mapWrap}>
             <WorldMap />
           </div>
         </Reveal>
-        <div className={s.stats}>
+        <div className={styles.stats}>
           {geoMetrics.map((metric, index) => (
             <Reveal key={metric.labelKey} delay={index}>
-              <div className={s.stat}>
-                <div className={s.statVal}>
+              <div className={styles.stat}>
+                <div className={styles.statVal}>
                   <Counter target={metric.target} suffix={metric.suffix} />
                 </div>
-                <div className={s.statLabel}>{t[metric.labelKey]}</div>
+                <div className={styles.statLabel}>{t[metric.labelKey]}</div>
               </div>
             </Reveal>
           ))}

@@ -1,9 +1,4 @@
-import type { TranslationKey } from "@/content";
-
-interface HeaderNavItem {
-  href: string;
-  key: TranslationKey;
-}
+import type { HeaderNavItem } from "@/types";
 
 export const HEADER_NAV_ITEMS: HeaderNavItem[] = [
   { href: "#about", key: "nav_about" },

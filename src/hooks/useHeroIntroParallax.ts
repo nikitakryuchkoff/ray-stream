@@ -19,15 +19,18 @@ export const useHeroIntroParallax = () => {
 
       frameId = requestAnimationFrame(() => {
         const scrollProgress = window.scrollY / window.innerHeight;
+
         if (scrollProgress < 1 && heroTopRef.current) {
           heroTopRef.current.style.opacity = String(1 - scrollProgress * 0.7);
           heroTopRef.current.style.transform = `translateY(${scrollProgress * 40}px)`;
         }
+
         frameId = null;
       });
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
       if (frameId !== null) cancelAnimationFrame(frameId);
       window.removeEventListener("scroll", onScroll);

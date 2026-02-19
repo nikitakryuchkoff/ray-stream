@@ -1,32 +1,33 @@
 "use client";
+import { default as classNames } from "classnames";
 import { ClipReveal, Reveal } from "@/components/ui";
 import type { Translations } from "@/content";
 import { useHeroIntroParallax } from "@/hooks";
-import { classNames, scrollToSection } from "@/utils";
-import s from "./Hero.module.css";
+import { scrollToSection } from "@/utils";
+import styles from "./Hero.module.css";
 
 const Hero = ({ t }: { t: Translations }) => {
   const { heroTopRef, isHeroVisible } = useHeroIntroParallax();
 
   return (
-    <section className={s.hero} id="hero" data-header-theme="dark">
-      <div className={s.glow} />
-      <div className={s.rays}>
-        <div className={s.ray} />
-        <div className={s.ray} />
-        <div className={s.ray} />
+    <section className={styles.hero} id="hero" data-header-theme="dark">
+      <div className={styles.glow} />
+      <div className={styles.rays}>
+        <div className={styles.ray} />
+        <div className={styles.ray} />
+        <div className={styles.ray} />
       </div>
-      <div className={s.top} ref={heroTopRef}>
+      <div className={styles.top} ref={heroTopRef}>
         <div
           className={classNames(
-            s.text,
-            s.enter,
-            s.enterText,
-            isHeroVisible && s.enterVisible,
+            styles.text,
+            styles.enter,
+            styles.enterText,
+            isHeroVisible && styles.enterVisible,
           )}
         >
           <Reveal delay={0} forceVisible={isHeroVisible}>
-            <p className={classNames("label", "label-l", s.heroLabel)}>
+            <p className={classNames("label", "label-l", styles.heroLabel)}>
               {t.hero_label}
             </p>
           </Reveal>
@@ -37,45 +38,45 @@ const Hero = ({ t }: { t: Translations }) => {
             </ClipReveal>
           </h1>
           <Reveal delay={2} forceVisible={isHeroVisible}>
-            <p className={s.sub}>{t.hero_sub}</p>
+            <p className={styles.sub}>{t.hero_sub}</p>
           </Reveal>
           <Reveal delay={3} forceVisible={isHeroVisible}>
-            <button className={s.btn} onClick={() => scrollToSection("#ct")}>
+            <button className={styles.btn} onClick={() => scrollToSection("#ct")}>
               <span>{t.hero_cta}</span>
-              <span className={s.arrow}>→</span>
+              <span className={styles.arrow}>→</span>
             </button>
           </Reveal>
         </div>
       </div>
       <div
         className={classNames(
-          s.videoWrap,
-          s.enter,
-          s.enterVideo,
-          isHeroVisible && s.enterVisible,
+          styles.videoWrap,
+          styles.enter,
+          styles.enterVideo,
+          isHeroVisible && styles.enterVisible,
         )}
       >
         <Reveal variant="scale" delay={4} forceVisible={isHeroVisible}>
-          <div className={s.vc}>
-            <div className={s.beams}>
-              <div className={s.beam} />
-              <div className={s.beam} />
-              <div className={s.beam} />
+          <div className={styles.vc}>
+            <div className={styles.beams}>
+              <div className={styles.beam} />
+              <div className={styles.beam} />
+              <div className={styles.beam} />
             </div>
-            <div className={s.vp}>
-              <div className={s.playBtn}>
+            <div className={styles.vp}>
+              <div className={styles.playBtn}>
                 <svg viewBox="0 0 16 16">
                   <polygon points="4,2 14,8 4,14" />
                 </svg>
               </div>
-              <span className={s.videoLabel}>{t.video_label}</span>
+              <span className={styles.videoLabel}>{t.video_label}</span>
             </div>
           </div>
         </Reveal>
       </div>
-      <div className={s.scrollInd}>
+      <div className={styles.scrollInd}>
         <span>Scroll</span>
-        <div className={s.scrollMouse} />
+        <div className={styles.scrollMouse} />
       </div>
     </section>
   );

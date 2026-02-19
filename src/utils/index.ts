@@ -1,5 +1,4 @@
 export { repeatItems } from "./array";
-export { classNames } from "./classNames";
 export {
   getEffectiveBackgroundColor,
   isDarkColor,

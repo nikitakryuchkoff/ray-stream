@@ -25,7 +25,9 @@ export const useHeaderAppearance = ({
       setIsScrolled(window.scrollY > scrollThreshold);
       if (isMenuOpen) return;
 
-      const headerBottom = headerRef.current?.getBoundingClientRect().bottom ?? 60;
+      const headerBottom =
+        headerRef.current?.getBoundingClientRect().bottom ?? 60;
+
       const sampleY = Math.min(
         window.innerHeight - 1,
         Math.round(headerBottom + sampleOffset),

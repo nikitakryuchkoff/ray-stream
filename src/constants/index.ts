@@ -1,11 +1,7 @@
 export { HEADER_NAV_ITEMS } from "./header";
 export { PARTNER_MARQUEE_REPEAT_COUNT } from "./partners";
 export { ORGANIZATION_JSON_LD, SITE_URL } from "./site";
-export {
-  SERVICE_CARDS,
-  type ServiceCardConfig,
-  type ServiceIconType,
-} from "./services";
+export { SERVICE_CARDS } from "./services";
 export {
   WORLD_MAP_DESKTOP_PADDING,
   WORLD_MAP_DIMENSIONS,

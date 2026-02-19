@@ -50,11 +50,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-const RootLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={dmSans.variable}>
       <body>{children}</body>

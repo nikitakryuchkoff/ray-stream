@@ -47,6 +47,7 @@ const flattenFeatures = (geoData: GeoFeature): Feature<Geometry>[] => {
 export const useWorldMap = () => {
   const { ref: mapContainerRef, isVisible: isMapInView } =
     useInView<HTMLDivElement>({ threshold: 0.15 });
+
   const [mapPaths, setMapPaths] = useState<MapPaths>(EMPTY_MAP_PATHS);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const isMobile = useMediaQuery(WORLD_MAP_MOBILE_BREAKPOINT_QUERY);

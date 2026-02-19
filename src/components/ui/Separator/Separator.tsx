@@ -1,14 +1,16 @@
 "use client";
-import { useInView } from "@/hooks";
-import { classNames } from "@/utils";
-import s from "./Separator.module.css";
 
-const Separator = ({ className = "" }: { className?: string }) => {
+import { default as classNames } from "classnames";
+import { useInView } from "@/hooks";
+import styles from "./Separator.module.css";
+
+const Separator = ({ className }: { className?: string }) => {
   const { ref, isVisible } = useInView<HTMLDivElement>();
+
   return (
     <div
       ref={ref}
-      className={classNames(s.sep, isVisible && s.visible, className)}
+      className={classNames(styles.sep, isVisible && styles.visible, className)}
     />
   );
 };

@@ -1,13 +1,15 @@
 "use client";
+import { default as classNames } from "classnames";
 import { useState, useCallback } from "react";
 import type { Translations } from "@/content";
 import { HEADER_NAV_ITEMS } from "@/constants";
 import { useBodyScrollLock, useHeaderAppearance } from "@/hooks";
-import { classNames, scrollToSection } from "@/utils";
-import s from "./Header.module.css";
+import { scrollToSection } from "@/utils";
+import styles from "./Header.module.css";
 
 const Header = ({ t }: { t: Translations }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const { headerRef, isScrolled, isDarkTheme } = useHeaderAppearance({
     isMenuOpen,
   });
@@ -24,36 +26,36 @@ const Header = ({ t }: { t: Translations }) => {
   };
 
   const headerClassName = classNames(
-    s.header,
-    isScrolled && s.scrolled,
-    isDarkTheme && s.dark,
+    styles.header,
+    isScrolled && styles.scrolled,
+    isDarkTheme && styles.dark,
   );
 
   const mobileOverlayClassName = classNames(
-    s.mobileNav,
-    isDarkTheme ? s.mobileNavDark : s.mobileNavLight,
-    isMenuOpen && s.mobileNavOpen,
+    styles.mobileNav,
+    isDarkTheme ? styles.mobileNavDark : styles.mobileNavLight,
+    isMenuOpen && styles.mobileNavOpen,
   );
 
   return (
     <>
       <header ref={headerRef} className={headerClassName}>
-        <a href="#" className={s.logo}>
-          RAYSTREAM<span className={s.logoSub}>INT&apos;L</span>
+        <a href="#" className={styles.logo}>
+          RAYSTREAM<span className={styles.logoSub}>INT&apos;L</span>
         </a>
 
-        <nav className={s.nav}>
+        <nav className={styles.nav}>
           {HEADER_NAV_ITEMS.map(({ href, key }) => (
             <button
               key={key}
-              className={s.navLink}
+              className={styles.navLink}
               onClick={() => handleSectionNavigation(href)}
             >
               {t[key]}
             </button>
           ))}
           <button
-            className={classNames(s.navLink, s.contactBtn)}
+            className={classNames(styles.navLink, styles.contactBtn)}
             onClick={() => handleSectionNavigation("#ct")}
           >
             {t.nav_contact}
@@ -61,7 +63,7 @@ const Header = ({ t }: { t: Translations }) => {
         </nav>
 
         <button
-          className={classNames(s.burger, isMenuOpen && s.burgerOpen)}
+          className={classNames(styles.burger, isMenuOpen && styles.burgerOpen)}
           onClick={toggleMenu}
           aria-label="Menu"
         >
@@ -75,14 +77,14 @@ const Header = ({ t }: { t: Translations }) => {
         {HEADER_NAV_ITEMS.map(({ href, key }) => (
           <button
             key={key}
-            className={s.mobileNavLink}
+            className={styles.mobileNavLink}
             onClick={() => handleSectionNavigation(href)}
           >
             {t[key]}
           </button>
         ))}
         <button
-          className={s.mobileNavLink}
+          className={styles.mobileNavLink}
           onClick={() => handleSectionNavigation("#ct")}
         >
           {t.nav_contact}

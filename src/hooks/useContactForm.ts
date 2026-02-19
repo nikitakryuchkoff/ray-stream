@@ -27,6 +27,7 @@ const INITIAL_FORM_VALUES: ContactFormValues = {
 export const useContactForm = (): UseContactFormResult => {
   const [formValues, setFormValues] =
     useState<ContactFormValues>(INITIAL_FORM_VALUES);
+
   const [status, setStatus] = useState<ContactFormStatus>("idle");
 
   const updateField = useCallback(
