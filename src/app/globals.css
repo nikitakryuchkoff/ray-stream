@@ -1,6 +1,6 @@
 :root {
   --bg: #fafafa;
-  --bg-alt: #f2f2f0;
+  --bg-alt: #f3f3f3;
   --bg-dark: #111113;
   --text: #111113;
   --text-s: #6b6b6f;
@@ -58,15 +58,15 @@ a {
 }
 
 .label {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-s);
+  color: rgba(17, 17, 19, 0.62);
 }
 
 .label-l {
-  color: var(--text-inv-s);
+  color: rgba(232, 232, 230, 0.68);
 }
 
 @media (prefers-reduced-motion: reduce) {

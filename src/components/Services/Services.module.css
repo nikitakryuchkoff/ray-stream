@@ -1,6 +1,6 @@
 .section { padding: clamp(80px,10vh,140px) 0; background: var(--bg-alt); }
 .header { margin-bottom: clamp(36px,4vh,56px); }
-.header h2 { font-weight: 300; font-size: clamp(1.5rem,2.5vw,2rem); margin-top: 10px; line-height: 1.3; }
+.header h2 { font-weight: 400; font-size: clamp(1.6rem,2.7vw,2.2rem); margin-top: 8px; line-height: 1.26; letter-spacing: -0.015em; }
 .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--line); }
 .card { background: var(--bg-alt); padding: clamp(28px,3vw,44px); transition: background 0.4s; position: relative; overflow: hidden; }
 .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--text); transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease); }

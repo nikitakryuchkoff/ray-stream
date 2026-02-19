@@ -8,10 +8,26 @@
   align-items: start;
 }
 .textCol blockquote {
-  font-size: clamp(1.25rem, 2vw, 1.7rem);
-  font-weight: 300;
-  line-height: 1.45;
-  margin-bottom: 20px;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  color: var(--text);
+  position: relative;
+  padding-left: 18px;
+}
+.textCol blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 19, 0.55),
+    rgba(17, 17, 19, 0.1)
+  );
 }
 .textCol p {
   font-size: 0.86rem;
@@ -25,7 +41,6 @@
   padding-top: 8px;
 }
 .metric {
-  border-top: 1px solid var(--line);
   padding-top: 18px;
 }
 .value {

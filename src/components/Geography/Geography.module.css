@@ -8,10 +8,29 @@
   margin-bottom: clamp(28px, 3vh, 44px);
 }
 .header h2 {
-  font-weight: 300;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  margin-top: 10px;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.7vw, 2.2rem);
+  margin-top: 8px;
+  letter-spacing: -0.015em;
   color: var(--text-inv);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 12px;
+}
+.header h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 68%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.82),
+    rgba(255, 255, 255, 0)
+  );
 }
 .desc {
   max-width: 680px;
@@ -20,6 +39,14 @@
   font-size: 0.84rem;
   color: var(--text-inv-s);
   line-height: 1.8;
+}
+.descLead {
+  color: var(--text-inv);
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
 }
 .mapWrap {
   max-width: 900px;

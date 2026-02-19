@@ -14,15 +14,34 @@ export default function WorldMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [paths, setPaths] = useState<{ land: string[]; borders: string }>({ land: [], borders: '' });
   const [loaded, setLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const uid = useId().replace(/:/g, '');
   const fadeId = `map-fade-${uid}`;
   const maskId = `map-mask-${uid}`;
 
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    const apply = () => setIsMobile(media.matches);
+    apply();
+
+    const onChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
+
+    if (typeof media.addEventListener === 'function') {
+      media.addEventListener('change', onChange);
+      return () => media.removeEventListener('change', onChange);
+    }
+
+    media.addListener(onChange);
+    return () => media.removeListener(onChange);
+  }, []);
+
   const focusBounds = useMemo(() => {
     const lngs = cities.map((c) => c.lng);
     const lats = cities.map((c) => c.lat);
-    const lngPad = 18;
-    const latPad = 12;
+    const lngPad = isMobile ? 10 : 18;
+    const latPad = isMobile ? 7 : 12;
 
     return {
       minLng: Math.min(...lngs) - lngPad,
@@ -30,7 +49,7 @@ export default function WorldMap() {
       minLat: Math.min(...lats) - latPad,
       maxLat: Math.max(...lats) + latPad,
     };
-  }, []);
+  }, [isMobile]);
 
   const focusRegion = useMemo(() => {
     return {
@@ -44,13 +63,19 @@ export default function WorldMap() {
   }, []);
 
   const proj = useMemo(() => {
+    const padX = isMobile ? 72 : 170;
+    const padY = isMobile ? 40 : 95;
+
     return geoNaturalEarth1().fitExtent(
-      [[170, 95], [W - 170, H - 95]],
+      [[padX, padY], [W - padX, H - padY]],
       focusRegion as any,
     );
-  }, [focusRegion]);
+  }, [focusRegion, isMobile]);
 
   const pathGen = useMemo(() => geoPath(proj), [proj]);
+  const gradientRadius = isMobile ? '82%' : '68%';
+  const gradientCore = isMobile ? '72%' : '62%';
+  const gradientSoft = isMobile ? '93%' : '86%';
 
   useEffect(() => {
     fetch(TOPOJSON_URL)
@@ -84,9 +109,9 @@ export default function WorldMap() {
     <div ref={wrapRef}>
       <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
         <defs>
-          <radialGradient id={fadeId} cx="50%" cy="48%" r="68%">
-            <stop offset="62%" stopColor="white" stopOpacity="1" />
-            <stop offset="86%" stopColor="white" stopOpacity="0.38" />
+          <radialGradient id={fadeId} cx="50%" cy="48%" r={gradientRadius}>
+            <stop offset={gradientCore} stopColor="white" stopOpacity="1" />
+            <stop offset={gradientSoft} stopColor="white" stopOpacity="0.5" />
             <stop offset="100%" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <mask id={maskId}>
@@ -115,8 +140,8 @@ export default function WorldMap() {
                 <path
                   key={c.name}
                   d={`M${hub[0]},${hub[1]} Q${mx},${my} ${pt[0]},${pt[1]}`}
-                  fill="none" stroke="rgba(255,255,255,.1)" strokeWidth=".8"
-                  strokeDasharray="4,4"
+                  fill="none" stroke="rgba(255,255,255,.1)" strokeWidth={isMobile ? '1.1' : '.8'}
+                  strokeDasharray={isMobile ? '3,3' : '4,4'}
                   opacity={active ? 1 : 0}
                   style={{ transition: `opacity 1s var(--ease) ${0.4 + i * 0.1}s` }}
                 />
@@ -129,24 +154,27 @@ export default function WorldMap() {
             {cities.map((c, i) => {
               const [x, y] = proj([c.lng, c.lat])!;
               const isHub = !!c.hub;
+              const outerR = isHub ? (isMobile ? 9 : 8) : (isMobile ? 6 : 5);
+              const innerR = isHub ? (isMobile ? 4.5 : 4) : (isMobile ? 2.8 : 2.2);
+              const textSize = isHub ? (isMobile ? 9 : 8) : (isMobile ? 8 : 7);
               const delay = `${0.3 + i * 0.12}s`;
               return (
                 <g key={c.name}>
-                  <circle cx={x} cy={y} r={isHub ? 8 : 5}
+                  <circle cx={x} cy={y} r={outerR}
                     fill="none" stroke={`rgba(255,255,255,${isHub ? '.4' : '.25'})`}
                     strokeWidth={isHub ? '.8' : '.6'}
                     opacity={active ? 1 : 0}
                     style={{ transition: `opacity .6s var(--ease) ${delay}`, animation: active ? `ringP ${isHub ? 2.5 : 3}s ease-in-out infinite ${i * 0.3}s` : 'none' }}
                   />
-                  <circle cx={x} cy={y} r={isHub ? 4 : 2.2}
+                  <circle cx={x} cy={y} r={innerR}
                     fill="#fff"
                     opacity={active ? (isHub ? 1 : 0.8) : 0}
                     style={{ transition: `opacity .6s var(--ease) ${delay}` }}
                   />
-                  <text x={x} y={y - (isHub ? 16 : 12)}
+                  <text x={x} y={y - (isHub ? (isMobile ? 18 : 16) : (isMobile ? 14 : 12))}
                     textAnchor="middle"
                     fill={`rgba(255,255,255,${isHub ? '.55' : '.35'})`}
-                    fontSize={isHub ? 8 : 7}
+                    fontSize={textSize}
                     fontWeight={isHub ? 500 : 400}
                     fontFamily="'DM Sans', sans-serif"
                     letterSpacing={isHub ? '1.5px' : '1px'}

@@ -6,6 +6,15 @@ import WorldMap from "./WorldMap";
 import s from "./Geography.module.css";
 
 export default function Geography({ t }: { t: Translations }) {
+  const [firstSentence, ...tailParts] = t.geo_desc.split(". ");
+  const hasTail = tailParts.length > 0;
+  const leadText = hasTail
+    ? firstSentence.endsWith(".")
+      ? firstSentence
+      : `${firstSentence}.`
+    : t.geo_desc;
+  const tailText = hasTail ? tailParts.join(". ") : "";
+
   return (
     <section className={s.section} id="geo">
       <div className="wrap">
@@ -18,7 +27,10 @@ export default function Geography({ t }: { t: Translations }) {
           </Reveal>
         </div>
         <Reveal delay={2}>
-          <p className={s.desc}>{t.geo_desc}</p>
+          <p className={s.desc}>
+            <span className={s.descLead}>{leadText}</span>
+            {tailText ? <> {tailText}</> : null}
+          </p>
         </Reveal>
         <Reveal delay={3}>
           <div className={s.mapWrap}>

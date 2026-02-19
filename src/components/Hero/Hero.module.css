@@ -20,7 +20,7 @@
     transform 0.1s;
 }
 .text {
-  max-width: 640px;
+  max-width: 680px;
 }
 .enter {
   opacity: 0;
@@ -37,21 +37,39 @@
   transition-delay: 0.28s;
 }
 .text h1 {
-  font-weight: 300;
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  margin-bottom: 18px;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.8vw, 3.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 .text h1 em {
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  padding: 0 0.08em;
+}
+.text h1 em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.08em;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0)
+  );
 }
 .sub {
-  font-size: 0.86rem;
-  color: var(--text-inv-s);
+  font-size: 0.9rem;
+  color: rgba(232, 232, 230, 0.8);
   max-width: 560px;
-  line-height: 1.75;
+  line-height: 1.8;
   margin-bottom: 32px;
 }
 
@@ -406,10 +424,6 @@
 @media (max-width: 768px) {
   .vc {
     aspect-ratio: 16/9;
-  }
-  .glow,
-  .rays {
-    display: none;
   }
   .scrollInd {
     display: none;
