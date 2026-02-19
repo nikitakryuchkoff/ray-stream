@@ -146,7 +146,10 @@ const Contact = ({ t }: { t: Translations }) => {
               </button>
               {status === "success" && (
                 <div
-                  className={classNames(styles.statusCard, styles.statusSuccess)}
+                  className={classNames(
+                    styles.statusCard,
+                    styles.statusSuccess,
+                  )}
                   role="status"
                   aria-live="polite"
                 >
