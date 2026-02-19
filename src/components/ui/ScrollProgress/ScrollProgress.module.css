@@ -1,0 +1,10 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--text);
+  z-index: 200;
+  transform-origin: left;
+  will-change: transform;
+}

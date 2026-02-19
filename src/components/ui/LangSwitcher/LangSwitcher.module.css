@@ -1,0 +1,22 @@
+.switcher {
+  font-size: 0.68rem;
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.btn {
+  padding: 4px 9px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--text-s);
+  transition: all 0.25s;
+}
+.active {
+  background: var(--text);
+  color: var(--bg);
+}

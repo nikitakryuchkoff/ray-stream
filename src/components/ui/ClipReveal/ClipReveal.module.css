@@ -1,0 +1,17 @@
+.clip {
+  overflow: hidden;
+}
+.clip > span {
+  display: block;
+  transform: translateY(105%);
+  transition: transform 0.9s var(--ease);
+}
+.visible > span {
+  transform: translateY(0);
+}
+.d1 > span {
+  transition-delay: 0.1s;
+}
+.d2 > span {
+  transition-delay: 0.2s;
+}

@@ -1,0 +1,67 @@
+.section {
+  padding: clamp(44px, 5vh, 64px) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+.label {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.heading {
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  letter-spacing: 0.02em;
+}
+.marqueeWrap {
+  position: relative;
+}
+.marqueeWrap::before,
+.marqueeWrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marqueeWrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+.marqueeWrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+.track {
+  display: flex;
+  width: max-content;
+}
+.marquee {
+  display: flex;
+  gap: 56px;
+  padding-right: 56px;
+  animation: scroll 60s linear infinite;
+  flex-shrink: 0;
+}
+.marqueeWrap:hover .marquee {
+  animation-play-state: paused;
+}
+.item {
+  flex-shrink: 0;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  transition: color 0.4s;
+}
+.item:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
+}

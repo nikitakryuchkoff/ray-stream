@@ -1,0 +1,47 @@
+.section {
+  padding: clamp(80px, 10vh, 140px) 0;
+  background: var(--bg-dark);
+  color: var(--text-inv);
+}
+.header {
+  text-align: center;
+  margin-bottom: clamp(28px, 3vh, 44px);
+}
+.header h2 {
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-top: 10px;
+  color: var(--text-inv);
+}
+.desc {
+  max-width: 680px;
+  margin: 0 auto clamp(28px, 3vh, 44px);
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--text-inv-s);
+  line-height: 1.8;
+}
+.mapWrap {
+  max-width: 900px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(36px, 5vw, 68px);
+  flex-wrap: wrap;
+}
+.stat {
+  text-align: center;
+}
+.statVal {
+  font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+  font-weight: 300;
+  color: var(--text-inv);
+}
+.statLabel {
+  font-size: 0.68rem;
+  color: var(--text-inv-s);
+  margin-top: 3px;
+}
