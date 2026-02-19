@@ -156,12 +156,20 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--bg);
   z-index: 99;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 28px;
+  transition: background 0.35s var(--ease);
+}
+.mobileNavDark {
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--text-inv);
+}
+.mobileNavLight {
+  background: rgba(250, 250, 250, 0.96);
+  color: var(--text);
 }
 .mobileNavOpen {
   display: flex;
@@ -174,7 +182,48 @@
   border: none;
   cursor: pointer;
   font-family: var(--font);
+  color: inherit;
+  position: relative;
+  transition:
+    color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+.mobileNavLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.mobileNavDark .mobileNavLink {
+  color: var(--text-inv-s);
+}
+.mobileNavDark .mobileNavLink:hover {
+  color: var(--text-inv);
+  transform: translateY(-1px);
+}
+.mobileNavDark .mobileNavLink:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 6px;
+}
+.mobileNavLight .mobileNavLink {
+  color: var(--text-s);
+}
+.mobileNavLight .mobileNavLink:hover {
   color: var(--text);
+  transform: translateY(-1px);
+}
+.mobileNavLink:hover::after {
+  transform: scaleX(1);
+}
+.mobileNavLight .mobileNavLink:focus-visible {
+  outline: 1px solid rgba(0, 0, 0, 0.45);
+  outline-offset: 6px;
 }
 
 @media (max-width: 768px) {

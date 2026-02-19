@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-height: 100svh;
   background: var(--bg-dark);
   color: var(--text-inv);
@@ -21,6 +21,20 @@
 }
 .text {
   max-width: 640px;
+}
+.enter {
+  opacity: 0;
+  transition: opacity 0.85s ease-out;
+  will-change: opacity;
+}
+.enterVisible {
+  opacity: 1;
+}
+.enterText {
+  transition-delay: 0.08s;
+}
+.enterVideo {
+  transition-delay: 0.28s;
 }
 .text h1 {
   font-weight: 300;
@@ -225,17 +239,41 @@
   opacity: 0.5;
 }
 @keyframes sweep1 {
-  0%, 100% { transform: rotate(-25deg); opacity: 0.6; }
-  50% { transform: rotate(20deg); opacity: 1; }
+  0%,
+  100% {
+    transform: rotate(-25deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(20deg);
+    opacity: 1;
+  }
 }
 @keyframes sweep2 {
-  0%, 100% { transform: rotate(30deg); opacity: 0.8; }
-  50% { transform: rotate(-15deg); opacity: 0.4; }
+  0%,
+  100% {
+    transform: rotate(30deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(-15deg);
+    opacity: 0.4;
+  }
 }
 @keyframes sweep3 {
-  0%, 100% { transform: rotate(5deg); opacity: 0.3; }
-  33% { transform: rotate(-30deg); opacity: 0.7; }
-  66% { transform: rotate(25deg); opacity: 0.5; }
+  0%,
+  100% {
+    transform: rotate(5deg);
+    opacity: 0.3;
+  }
+  33% {
+    transform: rotate(-30deg);
+    opacity: 0.7;
+  }
+  66% {
+    transform: rotate(25deg);
+    opacity: 0.5;
+  }
 }
 .vp {
   position: absolute;
@@ -245,7 +283,11 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  background: radial-gradient(ellipse at 50% 100%, rgba(25, 25, 27, 0.6) 0%, #19191b 60%);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(25, 25, 27, 0.6) 0%,
+    #19191b 60%
+  );
   z-index: 1;
 }
 .playBtn {
@@ -351,6 +393,13 @@
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enterText,
+  .enterVideo {
+    transition-delay: 0s;
   }
 }
 

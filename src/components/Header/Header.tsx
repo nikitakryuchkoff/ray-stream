@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Translations } from "@/content/types";
 import s from "./Header.module.css";
+import classNames from "classnames";
 
 const NAV_ITEMS = [
   { href: "#about", key: "nav_about" },
@@ -9,31 +10,108 @@ const NAV_ITEMS = [
   { href: "#geo", key: "nav_geo" },
 ] as const;
 
+type Rgb = [number, number, number];
+
+function parseRgb(color: string): [number, number, number, number] | null {
+  const match = color.match(/rgba?\(([^)]+)\)/i);
+  if (!match) return null;
+
+  const parts = match[1]
+    .split(",")
+    .map((part) => Number.parseFloat(part.trim()));
+  if (parts.length < 3 || parts.some((part) => Number.isNaN(part))) return null;
+
+  const [r, g, b, a = 1] = parts;
+  return [r, g, b, a];
+}
+
+function getEffectiveBackground(start: Element | null): Rgb | null {
+  let node: Element | null = start;
+
+  while (node) {
+    const parsed = parseRgb(window.getComputedStyle(node).backgroundColor);
+    if (parsed && parsed[3] > 0) {
+      return [parsed[0], parsed[1], parsed[2]];
+    }
+    node = node.parentElement;
+  }
+
+  const bodyColor = parseRgb(
+    window.getComputedStyle(document.body).backgroundColor,
+  );
+  if (!bodyColor) return null;
+  return [bodyColor[0], bodyColor[1], bodyColor[2]];
+}
+
+function isDarkBackground([r, g, b]: Rgb): boolean {
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  return yiq < 140;
+}
+
+function getSectionThemeFromPoint(x: number, y: number): boolean | null {
+  const sampledElement = document.elementFromPoint(x, y);
+  if (!sampledElement) return null;
+
+  const section = sampledElement.closest(
+    "section, [data-header-theme]",
+  ) as HTMLElement | null;
+
+  if (section) {
+    const explicitTheme = section.dataset.headerTheme;
+    if (explicitTheme === "dark") return true;
+    if (explicitTheme === "light") return false;
+
+    const sectionBg = parseRgb(
+      window.getComputedStyle(section).backgroundColor,
+    );
+
+    if (sectionBg && sectionBg[3] > 0) {
+      return isDarkBackground([sectionBg[0], sectionBg[1], sectionBg[2]]);
+    }
+  }
+
+  const fallbackBg = getEffectiveBackground(sampledElement);
+  if (!fallbackBg) return null;
+  return isDarkBackground(fallbackBg);
+}
+
 export default function Header({ t }: { t: Translations }) {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+
+    const updateHeaderTheme = () => {
       setScrolled(window.scrollY > 30);
+      if (menuOpen) return;
 
-      const hero = document.getElementById("hero");
-      const geo = document.getElementById("geo");
-      if (!hero || !geo) return;
-
-      const hb = hero.offsetTop + hero.offsetHeight;
-      const gt = geo.offsetTop - 70;
-      const gb = geo.offsetTop + geo.offsetHeight;
-      const sy = window.scrollY;
-
-      setDark(sy < hb - 70 || (sy >= gt && sy < gb));
+      const sampleX = Math.round(window.innerWidth / 2);
+      const sampleY = Math.min(window.innerHeight - 1, 72);
+      const sectionIsDark = getSectionThemeFromPoint(sampleX, sampleY);
+      if (sectionIsDark === null) return;
+      setDark(sectionIsDark);
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onViewportChange = () => {
+      if (ticking) return;
+      requestAnimationFrame(() => {
+        updateHeaderTheme();
+        ticking = false;
+      });
+      ticking = true;
+    };
+
+    window.addEventListener("scroll", onViewportChange, { passive: true });
+    window.addEventListener("resize", onViewportChange);
+    onViewportChange();
+
+    return () => {
+      window.removeEventListener("scroll", onViewportChange);
+      window.removeEventListener("resize", onViewportChange);
+    };
+  }, [menuOpen]);
 
   const scrollTo = useCallback((href: string) => {
     setMenuOpen(false);
@@ -49,9 +127,7 @@ export default function Header({ t }: { t: Translations }) {
     });
   };
 
-  const cls = [s.header, scrolled ? s.scrolled : "", dark ? s.dark : ""]
-    .filter(Boolean)
-    .join(" ");
+  const cls = classNames(s.header, scrolled && s.scrolled, dark && s.dark);
 
   return (
     <>
@@ -71,7 +147,7 @@ export default function Header({ t }: { t: Translations }) {
             </button>
           ))}
           <button
-            className={`${s.navLink} ${s.contactBtn}`}
+            className={classNames(s.navLink, s.contactBtn)}
             onClick={() => scrollTo("#ct")}
           >
             {t.nav_contact}
@@ -79,7 +155,7 @@ export default function Header({ t }: { t: Translations }) {
         </nav>
 
         <button
-          className={`${s.burger} ${menuOpen ? s.burgerOpen : ""}`}
+          className={classNames(s.burger, menuOpen && s.burgerOpen)}
           onClick={toggleMenu}
           aria-label="Menu"
         >
@@ -89,7 +165,13 @@ export default function Header({ t }: { t: Translations }) {
         </button>
       </header>
 
-      <div className={`${s.mobileNav} ${menuOpen ? s.mobileNavOpen : ""}`}>
+      <div
+        className={classNames(
+          s.mobileNav,
+          dark ? s.mobileNavDark : s.mobileNavLight,
+          menuOpen && s.mobileNavOpen,
+        )}
+      >
         {NAV_ITEMS.map(({ href, key }) => (
           <button
             key={key}

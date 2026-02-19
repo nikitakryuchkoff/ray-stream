@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import { useInView } from "@/hooks/useInView";
 import s from "./Reveal.module.css";
+import classNames from "classnames";
 
 type Variant = "up" | "left" | "scale";
 
@@ -36,14 +37,12 @@ export default function Reveal({
 }: Props) {
   const { ref, isVisible } = useInView<HTMLDivElement>();
   const vis = forceVisible || isVisible;
-  const cls = [
+  const cls = classNames(
     variantMap[variant],
-    delayMap[delay] || "",
-    vis ? s.visible : "",
+    delayMap[delay],
+    vis && s.visible,
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
 
   return (
     <div ref={ref} className={cls}>

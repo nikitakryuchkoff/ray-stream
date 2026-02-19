@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import { useInView } from "@/hooks/useInView";
 import s from "./ClipReveal.module.css";
+import classNames from "classnames";
 
 interface Props {
   children: ReactNode;
@@ -26,9 +27,7 @@ export default function ClipReveal({
 
   const vis = forceVisible || isVisible;
 
-  const cls = [s.clip, delayMap[delay] || "", vis ? s.visible : ""]
-    .filter(Boolean)
-    .join(" ");
+  const cls = classNames(s.clip, delayMap[delay], vis && s.visible);
   return (
     <span ref={ref} className={cls}>
       <span>{children}</span>
