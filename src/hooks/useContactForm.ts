@@ -24,7 +24,7 @@ const INITIAL_FORM_VALUES: ContactFormValues = {
   message: "",
 };
 
-export function useContactForm(): UseContactFormResult {
+export const useContactForm = (): UseContactFormResult => {
   const [formValues, setFormValues] =
     useState<ContactFormValues>(INITIAL_FORM_VALUES);
   const [status, setStatus] = useState<ContactFormStatus>("idle");
@@ -71,4 +71,4 @@ export function useContactForm(): UseContactFormResult {
     updateField,
     submitForm,
   };
-}
+};

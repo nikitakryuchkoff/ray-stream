@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
-import { SITE_URL } from "@/constants/site";
+import { SITE_URL } from "@/constants";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -50,14 +50,16 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) => {
   return (
     <html lang="en" className={dmSans.variable}>
       <body>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -1,14 +1,12 @@
 "use client";
 import { useState, useCallback } from "react";
-import classNames from "classnames";
-import type { Translations } from "@/content/types";
-import { HEADER_NAV_ITEMS } from "@/constants/header";
-import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
-import { useHeaderAppearance } from "@/hooks/useHeaderAppearance";
-import { scrollToSection } from "@/utils/dom";
+import type { Translations } from "@/content";
+import { HEADER_NAV_ITEMS } from "@/constants";
+import { useBodyScrollLock, useHeaderAppearance } from "@/hooks";
+import { classNames, scrollToSection } from "@/utils";
 import s from "./Header.module.css";
 
-export default function Header({ t }: { t: Translations }) {
+const Header = ({ t }: { t: Translations }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { headerRef, isScrolled, isDarkTheme } = useHeaderAppearance({
     isMenuOpen,
@@ -92,4 +90,6 @@ export default function Header({ t }: { t: Translations }) {
       </div>
     </>
   );
-}
+};
+
+export { Header };

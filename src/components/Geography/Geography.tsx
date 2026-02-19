@@ -1,12 +1,11 @@
-import type { Translations } from "@/content/types";
-import { geoMetrics } from "@/data/metrics";
-import Reveal from "@/components/ui/Reveal";
-import Counter from "@/components/ui/Counter";
-import { useGeographyDescription } from "@/hooks/useGeographyDescription";
-import WorldMap from "./WorldMap";
+import { Counter, Reveal } from "@/components/ui";
+import type { Translations } from "@/content";
+import { geoMetrics } from "@/data";
+import { useGeographyDescription } from "@/hooks";
+import { WorldMap } from "./WorldMap";
 import s from "./Geography.module.css";
 
-export default function Geography({ t }: { t: Translations }) {
+const Geography = ({ t }: { t: Translations }) => {
   const { leadText, tailText } = useGeographyDescription(t.geo_desc);
 
   return (
@@ -46,4 +45,6 @@ export default function Geography({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Geography };

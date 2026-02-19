@@ -1,1 +1,1 @@
-export { default } from './ClipReveal';
+export { ClipReveal } from "./ClipReveal";

@@ -1,10 +1,10 @@
 "use client";
 
-import { WORLD_MAP_DIMENSIONS } from "@/constants/worldMap";
-import { cities } from "@/data/cities";
-import { useWorldMap } from "@/hooks/useWorldMap";
+import { WORLD_MAP_DIMENSIONS } from "@/constants";
+import { cities } from "@/data";
+import { useWorldMap } from "@/hooks";
 
-export default function WorldMap() {
+const WorldMap = () => {
   const {
     mapContainerRef,
     mapPaths,
@@ -165,4 +165,6 @@ export default function WorldMap() {
       </svg>
     </div>
   );
-}
+};
+
+export { WorldMap };

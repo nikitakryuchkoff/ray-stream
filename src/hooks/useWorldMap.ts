@@ -5,9 +5,9 @@ import { geoCentroid, geoNaturalEarth1, geoPath } from "d3-geo";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 import { feature, mesh } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
-import { cities } from "@/data/cities";
-import { useInView } from "@/hooks/useInView";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { cities } from "@/data";
+import { useInView } from "./useInView";
+import { useMediaQuery } from "./useMediaQuery";
 import {
   WORLD_MAP_DESKTOP_PADDING,
   WORLD_MAP_DIMENSIONS,
@@ -15,7 +15,7 @@ import {
   WORLD_MAP_MOBILE_BREAKPOINT_QUERY,
   WORLD_MAP_MOBILE_PADDING,
   WORLD_MAP_TOPOJSON_URL,
-} from "@/constants/worldMap";
+} from "@/constants";
 
 interface FocusBounds {
   minLng: number;
@@ -36,15 +36,15 @@ const EMPTY_MAP_PATHS: MapPaths = {
 
 type GeoFeature = Feature<Geometry> | FeatureCollection<Geometry>;
 
-function flattenFeatures(geoData: GeoFeature): Feature<Geometry>[] {
+const flattenFeatures = (geoData: GeoFeature): Feature<Geometry>[] => {
   if (geoData.type !== "FeatureCollection") {
     return [geoData];
   }
 
   return geoData.features as Feature<Geometry>[];
-}
+};
 
-export function useWorldMap() {
+export const useWorldMap = () => {
   const { ref: mapContainerRef, isVisible: isMapInView } =
     useInView<HTMLDivElement>({ threshold: 0.15 });
   const [mapPaths, setMapPaths] = useState<MapPaths>(EMPTY_MAP_PATHS);
@@ -103,7 +103,7 @@ export function useWorldMap() {
     let isCancelled = false;
     const abortController = new AbortController();
 
-    async function loadMapPaths() {
+    const loadMapPaths = async () => {
       try {
         const response = await fetch(WORLD_MAP_TOPOJSON_URL, {
           signal: abortController.signal,
@@ -150,7 +150,7 @@ export function useWorldMap() {
         setMapPaths(EMPTY_MAP_PATHS);
         setIsMapLoaded(false);
       }
-    }
+    };
 
     loadMapPaths();
 
@@ -179,4 +179,4 @@ export function useWorldMap() {
     fadeGradientId,
     maskId,
   };
-}
+};

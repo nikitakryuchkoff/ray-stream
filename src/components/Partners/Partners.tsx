@@ -1,11 +1,11 @@
-import type { Translations } from "@/content/types";
-import { PARTNER_MARQUEE_REPEAT_COUNT } from "@/constants/partners";
-import { partners } from "@/data/partners";
-import Reveal from "@/components/ui/Reveal";
-import { repeatItems } from "@/utils/array";
+import { Reveal } from "@/components/ui";
+import type { Translations } from "@/content";
+import { PARTNER_MARQUEE_REPEAT_COUNT } from "@/constants";
+import { partners } from "@/data";
+import { repeatItems } from "@/utils";
 import s from "./Partners.module.css";
 
-export default function Partners({ t }: { t: Translations }) {
+const Partners = ({ t }: { t: Translations }) => {
   const repeatedPartners = repeatItems(partners, PARTNER_MARQUEE_REPEAT_COUNT);
 
   return (
@@ -35,4 +35,6 @@ export default function Partners({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Partners };

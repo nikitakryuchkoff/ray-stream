@@ -1,8 +1,10 @@
-'use client';
-import { useScrollProgress } from '@/hooks/useScrollProgress';
-import s from './ScrollProgress.module.css';
+"use client";
+import { useScrollProgress } from "@/hooks";
+import s from "./ScrollProgress.module.css";
 
-export default function ScrollProgress() {
+const ScrollProgress = () => {
   const progress = useScrollProgress();
   return <div className={s.bar} style={{ transform: `scaleX(${progress})` }} />;
-}
+};
+
+export { ScrollProgress };

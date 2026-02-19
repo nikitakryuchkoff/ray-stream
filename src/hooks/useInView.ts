@@ -7,9 +7,9 @@ interface UseInViewOptions {
   once?: boolean;
 }
 
-export function useInView<T extends HTMLElement = HTMLDivElement>(
+export const useInView = <T extends HTMLElement = HTMLDivElement>(
   options: UseInViewOptions = {},
-) {
+) => {
   const {
     threshold = 0.1,
     rootMargin = "0px 0px -30px 0px",
@@ -39,4 +39,4 @@ export function useInView<T extends HTMLElement = HTMLDivElement>(
   }, [threshold, rootMargin, once]);
 
   return { ref, isVisible };
-}
+};

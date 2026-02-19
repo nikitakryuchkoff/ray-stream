@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
-import type { Translations } from "@/content/types";
-import { SERVICE_CARDS, type ServiceIconType } from "@/constants/services";
-import Reveal from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui";
+import type { Translations } from "@/content";
+import { SERVICE_CARDS, type ServiceIconType } from "@/constants";
 import {
   ArchitecturalIcon,
   IndustrialIcon,
@@ -17,7 +17,7 @@ const serviceIconsByType: Record<ServiceIconType, ComponentType> = {
   smart: SmartIcon,
 };
 
-export default function Services({ t }: { t: Translations }) {
+const Services = ({ t }: { t: Translations }) => {
   return (
     <section className={s.section} id="svcs">
       <div className="wrap">
@@ -49,4 +49,6 @@ export default function Services({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Services };

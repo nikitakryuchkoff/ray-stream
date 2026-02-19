@@ -1,13 +1,11 @@
 "use client";
-import classNames from "classnames";
-import type { Translations } from "@/content/types";
-import Reveal from "@/components/ui/Reveal";
-import ClipReveal from "@/components/ui/ClipReveal";
-import { useHeroIntroParallax } from "@/hooks/useHeroIntroParallax";
-import { scrollToSection } from "@/utils/dom";
+import { ClipReveal, Reveal } from "@/components/ui";
+import type { Translations } from "@/content";
+import { useHeroIntroParallax } from "@/hooks";
+import { classNames, scrollToSection } from "@/utils";
 import s from "./Hero.module.css";
 
-export default function Hero({ t }: { t: Translations }) {
+const Hero = ({ t }: { t: Translations }) => {
   const { heroTopRef, isHeroVisible } = useHeroIntroParallax();
 
   return (
@@ -81,4 +79,6 @@ export default function Hero({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Hero };

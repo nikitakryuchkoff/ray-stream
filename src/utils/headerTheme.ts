@@ -1,6 +1,6 @@
-import { getEffectiveBackgroundColor, isDarkColor } from "@/utils/color";
+import { getEffectiveBackgroundColor, isDarkColor } from "./color";
 
-export function getSectionThemeAtY(sampleY: number): boolean | null {
+export const getSectionThemeAtY = (sampleY: number): boolean | null => {
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>("section[id], [data-header-theme]"),
   );
@@ -35,4 +35,4 @@ export function getSectionThemeAtY(sampleY: number): boolean | null {
   if (!sectionBackground) return null;
 
   return isDarkColor(sectionBackground);
-}
+};

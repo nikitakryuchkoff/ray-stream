@@ -1,8 +1,8 @@
 "use client";
-import { ReactNode } from "react";
-import { useInView } from "@/hooks/useInView";
+import type { ReactNode } from "react";
+import { useInView } from "@/hooks";
+import { classNames } from "@/utils";
 import s from "./Reveal.module.css";
-import classNames from "classnames";
 
 type Variant = "up" | "left" | "scale";
 
@@ -28,13 +28,13 @@ const delayMap: Record<number, string> = {
   5: s.d5,
 };
 
-export default function Reveal({
+const Reveal = ({
   children,
   variant = "up",
   delay = 0,
   className = "",
   forceVisible = false,
-}: Props) {
+}: Props) => {
   const { ref, isVisible } = useInView<HTMLDivElement>();
   const isElementVisible = forceVisible || isVisible;
   const revealClassName = classNames(
@@ -49,4 +49,6 @@ export default function Reveal({
       {children}
     </div>
   );
-}
+};
+
+export { Reveal };

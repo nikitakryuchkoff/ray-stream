@@ -1,12 +1,11 @@
 "use client";
-import classNames from "classnames";
-import type { Translations } from "@/content/types";
-import { useContactForm } from "@/hooks/useContactForm";
-import Reveal from "@/components/ui/Reveal";
-import Separator from "@/components/ui/Separator";
+import { Reveal, Separator } from "@/components/ui";
+import type { Translations } from "@/content";
+import { useContactForm } from "@/hooks";
+import { classNames } from "@/utils";
 import s from "./Contact.module.css";
 
-export default function Contact({ t }: { t: Translations }) {
+const Contact = ({ t }: { t: Translations }) => {
   const { formValues, status, isSubmitting, updateField, submitForm } =
     useContactForm();
 
@@ -86,4 +85,6 @@ export default function Contact({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Contact };

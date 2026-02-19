@@ -1,0 +1,9 @@
+export { About } from "./About";
+export { Advantages } from "./Advantages";
+export { Contact } from "./Contact";
+export { Footer } from "./Footer";
+export { Geography } from "./Geography";
+export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { Partners } from "./Partners";
+export { Services } from "./Services";

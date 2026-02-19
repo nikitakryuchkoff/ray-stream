@@ -1,8 +1,8 @@
 "use client";
-import { ReactNode } from "react";
-import { useInView } from "@/hooks/useInView";
+import type { ReactNode } from "react";
+import { useInView } from "@/hooks";
+import { classNames } from "@/utils";
 import s from "./ClipReveal.module.css";
-import classNames from "classnames";
 
 interface Props {
   children: ReactNode;
@@ -18,11 +18,11 @@ const delayMap: Record<number, string> = {
   5: s.d5,
 };
 
-export default function ClipReveal({
+const ClipReveal = ({
   children,
   delay = 0,
   forceVisible = false,
-}: Props) {
+}: Props) => {
   const { ref, isVisible } = useInView<HTMLSpanElement>();
 
   const isElementVisible = forceVisible || isVisible;
@@ -36,4 +36,6 @@ export default function ClipReveal({
       <span>{children}</span>
     </span>
   );
-}
+};
+
+export { ClipReveal };

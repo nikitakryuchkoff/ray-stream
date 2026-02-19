@@ -11,7 +11,6 @@ export const cities: City[] = [
   { name: "GUANGZHOU", lat: 23.1, lng: 113.3 },
   { name: "DUBAI", lat: 25.2, lng: 55.3 },
   { name: "ISTANBUL", lat: 41.0, lng: 29.0 },
-  { name: "MOSCOW", lat: 55.8, lng: 37.6 },
   { name: "ALMATY", lat: 43.2, lng: 76.9 },
   { name: "DUSHANBE", lat: 38.6, lng: 68.8 },
 ];

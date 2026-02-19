@@ -1,17 +1,19 @@
-import { content } from "@/content/en";
-import ScrollProgress from "@/components/ui/ScrollProgress";
-import Header from "@/components/Header/Header";
-import Hero from "@/components/Hero/Hero";
-import About from "@/components/About/About";
-import Services from "@/components/Services/Services";
-import Advantages from "@/components/Advantages/Advantages";
-import Geography from "@/components/Geography/Geography";
-import Partners from "@/components/Partners/Partners";
-import Contact from "@/components/Contact/Contact";
-import Footer from "@/components/Footer/Footer";
-import { ORGANIZATION_JSON_LD } from "@/constants/site";
+import {
+  About,
+  Advantages,
+  Contact,
+  Footer,
+  Geography,
+  Header,
+  Hero,
+  Partners,
+  Services,
+} from "@/components";
+import { ScrollProgress } from "@/components/ui";
+import { content } from "@/content";
+import { ORGANIZATION_JSON_LD } from "@/constants";
 
-export default function RootPage() {
+const RootPage = () => {
   return (
     <>
       <script
@@ -32,4 +34,6 @@ export default function RootPage() {
       <Footer t={content} />
     </>
   );
-}
+};
+
+export default RootPage;

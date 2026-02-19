@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function useCounter(
+export const useCounter = (
   target: number,
   isVisible: boolean,
   duration = 1800,
-) {
+) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ export function useCounter(
   }, [isVisible, target, duration]);
 
   return count;
-}
+};

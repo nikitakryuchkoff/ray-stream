@@ -1,9 +1,9 @@
-import type { Translations } from "@/content/types";
-import { advantages } from "@/data/advantages";
-import Reveal from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui";
+import type { Translations } from "@/content";
+import { advantages } from "@/data";
 import s from "./Advantages.module.css";
 
-export default function Advantages({ t }: { t: Translations }) {
+const Advantages = ({ t }: { t: Translations }) => {
   return (
     <section className={s.section} id="advs">
       <div className="wrap">
@@ -29,4 +29,6 @@ export default function Advantages({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { Advantages };

@@ -1,10 +1,10 @@
 "use client";
-import type { Translations } from "@/content/types";
-import { HEADER_NAV_ITEMS } from "@/constants/header";
-import { scrollToSection } from "@/utils/dom";
+import type { Translations } from "@/content";
+import { HEADER_NAV_ITEMS } from "@/constants";
+import { scrollToSection } from "@/utils";
 import s from "./Footer.module.css";
 
-export default function Footer({ t }: { t: Translations }) {
+const Footer = ({ t }: { t: Translations }) => {
   return (
     <footer className={s.footer}>
       <div className={s.inner}>
@@ -24,4 +24,6 @@ export default function Footer({ t }: { t: Translations }) {
       </div>
     </footer>
   );
-}
+};
+
+export { Footer };

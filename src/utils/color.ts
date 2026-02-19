@@ -1,7 +1,7 @@
 export type RgbColor = [number, number, number];
 type RgbaColor = [number, number, number, number];
 
-export function parseRgbaColor(color: string): RgbaColor | null {
+export const parseRgbaColor = (color: string): RgbaColor | null => {
   const match = color.match(/rgba?\(([^)]+)\)/i);
   if (!match) return null;
 
@@ -13,11 +13,11 @@ export function parseRgbaColor(color: string): RgbaColor | null {
 
   const [red, green, blue, alpha = 1] = parts;
   return [red, green, blue, alpha];
-}
+};
 
-export function getEffectiveBackgroundColor(
+export const getEffectiveBackgroundColor = (
   startElement: Element | null,
-): RgbColor | null {
+): RgbColor | null => {
   let currentElement: Element | null = startElement;
 
   while (currentElement) {
@@ -35,9 +35,9 @@ export function getEffectiveBackgroundColor(
   );
   if (!bodyColor) return null;
   return [bodyColor[0], bodyColor[1], bodyColor[2]];
-}
+};
 
-export function isDarkColor([red, green, blue]: RgbColor): boolean {
+export const isDarkColor = ([red, green, blue]: RgbColor): boolean => {
   const yiq = (red * 299 + green * 587 + blue * 114) / 1000;
   return yiq < 140;
-}
+};

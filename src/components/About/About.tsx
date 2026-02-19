@@ -1,11 +1,9 @@
-import type { Translations } from "@/content/types";
-import { aboutMetrics } from "@/data/metrics";
-import Reveal from "@/components/ui/Reveal";
-import Separator from "@/components/ui/Separator";
-import Counter from "@/components/ui/Counter";
+import { Counter, Reveal, Separator } from "@/components/ui";
+import type { Translations } from "@/content";
+import { aboutMetrics } from "@/data";
 import s from "./About.module.css";
 
-export default function About({ t }: { t: Translations }) {
+const About = ({ t }: { t: Translations }) => {
   return (
     <section className={s.section} id="about">
       <div className="wrap">
@@ -41,4 +39,6 @@ export default function About({ t }: { t: Translations }) {
       </div>
     </section>
   );
-}
+};
+
+export { About };

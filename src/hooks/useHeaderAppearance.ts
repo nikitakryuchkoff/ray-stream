@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { getSectionThemeAtY } from "@/utils/headerTheme";
+import { getSectionThemeAtY } from "@/utils";
 
 interface UseHeaderAppearanceOptions {
   isMenuOpen: boolean;
@@ -9,11 +9,11 @@ interface UseHeaderAppearanceOptions {
   sampleOffset?: number;
 }
 
-export function useHeaderAppearance({
+export const useHeaderAppearance = ({
   isMenuOpen,
   scrollThreshold = 30,
   sampleOffset = 8,
-}: UseHeaderAppearanceOptions) {
+}: UseHeaderAppearanceOptions) => {
   const headerRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -62,4 +62,4 @@ export function useHeaderAppearance({
   }, [isMenuOpen, scrollThreshold, sampleOffset]);
 
   return { headerRef, isScrolled, isDarkTheme };
-}
+};

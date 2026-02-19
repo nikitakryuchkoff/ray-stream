@@ -1,4 +1,4 @@
-export function IndustrialIcon() {
+export const IndustrialIcon = () => {
   return (
     <svg viewBox="0 0 36 36">
       <path d="M6 32h24" />
@@ -8,8 +8,9 @@ export function IndustrialIcon() {
       <path d="M18 14v3" opacity=".4" />
     </svg>
   );
-}
-export function ArchitecturalIcon() {
+};
+
+export const ArchitecturalIcon = () => {
   return (
     <svg viewBox="0 0 36 36">
       <rect x="6" y="8" width="24" height="24" rx="1" />
@@ -18,8 +19,9 @@ export function ArchitecturalIcon() {
       <path d="M12 14h12" opacity=".3" />
     </svg>
   );
-}
-export function InteriorIcon() {
+};
+
+export const InteriorIcon = () => {
   return (
     <svg viewBox="0 0 36 36">
       <circle cx="18" cy="16" r="8" />
@@ -32,8 +34,9 @@ export function InteriorIcon() {
       <circle cx="18" cy="16" r="3" opacity=".4" />
     </svg>
   );
-}
-export function SmartIcon() {
+};
+
+export const SmartIcon = () => {
   return (
     <svg viewBox="0 0 36 36">
       <rect x="8" y="8" width="20" height="20" rx="3" />
@@ -42,4 +45,4 @@ export function SmartIcon() {
       <circle cx="18" cy="18" r="2" opacity=".6" />
     </svg>
   );
-}
+};

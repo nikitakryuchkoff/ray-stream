@@ -3,7 +3,9 @@ interface GeographyDescription {
   tailText: string;
 }
 
-export function useGeographyDescription(description: string): GeographyDescription {
+export const useGeographyDescription = (
+  description: string,
+): GeographyDescription => {
   const [firstSentence = "", ...remainingSentences] = description.split(". ");
   const hasRemainingText = remainingSentences.length > 0;
 
@@ -17,4 +19,4 @@ export function useGeographyDescription(description: string): GeographyDescripti
     leadText,
     tailText: hasRemainingText ? remainingSentences.join(". ") : "",
   };
-}
+};

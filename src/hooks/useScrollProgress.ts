@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function useScrollProgress() {
+export const useScrollProgress = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export function useScrollProgress() {
   }, []);
 
   return progress;
-}
+};

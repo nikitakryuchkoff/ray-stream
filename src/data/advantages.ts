@@ -1,4 +1,4 @@
-import type { TranslationKey } from "@/content/types";
+import type { TranslationKey } from "@/content";
 
 export interface Advantage {
   num: string;

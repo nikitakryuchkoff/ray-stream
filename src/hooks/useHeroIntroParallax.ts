@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function useHeroIntroParallax() {
+export const useHeroIntroParallax = () => {
   const heroTopRef = useRef<HTMLDivElement>(null);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
@@ -35,4 +35,4 @@ export function useHeroIntroParallax() {
   }, []);
 
   return { heroTopRef, isHeroVisible };
-}
+};
