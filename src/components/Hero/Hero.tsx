@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import type { Lang, Translations } from '@/i18n/types';
+import type { Translations } from '@/content/types';
 import Reveal from '@/components/ui/Reveal';
 import ClipReveal from '@/components/ui/ClipReveal';
 import s from './Hero.module.css';
 
-export default function Hero({ lang, t }: { lang: Lang; t: Translations }) {
+export default function Hero({ t }: { t: Translations }) {
   const topRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Hero({ lang, t }: { lang: Lang; t: Translations }) {
           <h1>
             <ClipReveal>{t.hero_line1}</ClipReveal>
             <ClipReveal delay={1}>
-              {t.hero_line2} <em>{lang === 'en' ? 'lighting' : 'освещения'}</em>
+              {t.hero_line2} <em>lighting</em>
             </ClipReveal>
           </h1>
           <Reveal delay={2}>

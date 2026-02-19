@@ -1,17 +1,27 @@
 .clip {
-  overflow: hidden;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.75s ease-out;
+  will-change: opacity;
 }
 .clip > span {
   display: block;
-  transform: translateY(105%);
-  transition: transform 0.9s var(--ease);
 }
-.visible > span {
-  transform: translateY(0);
+.visible {
+  opacity: 1;
 }
-.d1 > span {
+.d1 {
   transition-delay: 0.1s;
 }
-.d2 > span {
+.d2 {
   transition-delay: 0.2s;
+}
+.d3 {
+  transition-delay: 0.3s;
+}
+.d4 {
+  transition-delay: 0.4s;
+}
+.d5 {
+  transition-delay: 0.5s;
 }

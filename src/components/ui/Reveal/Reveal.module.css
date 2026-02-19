@@ -1,35 +1,26 @@
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.8s var(--ease),
-    transform 0.8s var(--ease);
+  transition: opacity 0.8s var(--ease);
+  will-change: opacity;
 }
 .visible {
   opacity: 1;
-  transform: translateY(0);
 }
 .slideL {
   opacity: 0;
-  transform: translateX(-40px);
-  transition:
-    opacity 0.8s var(--ease),
-    transform 0.8s var(--ease);
+  transition: opacity 0.8s var(--ease);
+  will-change: opacity;
 }
 .slideL.visible {
   opacity: 1;
-  transform: translateX(0);
 }
 .scaleIn {
   opacity: 0;
-  transform: scale(0.92);
-  transition:
-    opacity 0.8s var(--ease),
-    transform 0.8s var(--ease);
+  transition: opacity 0.8s var(--ease);
+  will-change: opacity;
 }
 .scaleIn.visible {
   opacity: 1;
-  transform: scale(1);
 }
 .d1 {
   transition-delay: 0.1s;

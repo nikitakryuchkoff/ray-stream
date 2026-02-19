@@ -1,6 +1,4 @@
-export type Lang = 'ru' | 'en';
-
-export interface Translations {
+export interface Content {
   nav_about: string;
   nav_services: string;
   nav_geo: string;
@@ -21,16 +19,24 @@ export interface Translations {
   m_regions: string;
   serv_label: string;
   serv_h2: string;
-  s1_h: string; s1_p: string;
-  s2_h: string; s2_p: string;
-  s3_h: string; s3_p: string;
-  s4_h: string; s4_p: string;
+  s1_h: string;
+  s1_p: string;
+  s2_h: string;
+  s2_p: string;
+  s3_h: string;
+  s3_p: string;
+  s4_h: string;
+  s4_p: string;
   adv_label: string;
   adv_h2: string;
-  a1_h: string; a1_p: string;
-  a2_h: string; a2_p: string;
-  a3_h: string; a3_p: string;
-  a4_h: string; a4_p: string;
+  a1_h: string;
+  a1_p: string;
+  a2_h: string;
+  a2_p: string;
+  a3_h: string;
+  a3_p: string;
+  a4_h: string;
+  a4_p: string;
   geo_label: string;
   geo_h2: string;
   geo_desc: string;
@@ -51,3 +57,5 @@ export interface Translations {
   f_success: string;
   f_error: string;
 }
+
+export type Translations = Content;

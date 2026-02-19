@@ -1,5 +1,5 @@
 "use client";
-import type { Translations } from "@/i18n/types";
+import type { Translations } from "@/content/types";
 import s from "./Footer.module.css";
 
 export default function Footer({ t }: { t: Translations }) {

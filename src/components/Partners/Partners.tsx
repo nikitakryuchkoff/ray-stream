@@ -1,4 +1,4 @@
-import type { Translations } from '@/i18n/types';
+import type { Translations } from '@/content/types';
 import { partners } from '@/data/partners';
 import Reveal from '@/components/ui/Reveal';
 import s from './Partners.module.css';

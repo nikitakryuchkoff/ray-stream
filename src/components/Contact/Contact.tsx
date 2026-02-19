@@ -1,6 +1,6 @@
 'use client';
 import { useState, FormEvent } from 'react';
-import type { Translations } from '@/i18n/types';
+import type { Translations } from '@/content/types';
 import Reveal from '@/components/ui/Reveal';
 import Separator from '@/components/ui/Separator';
 import s from './Contact.module.css';

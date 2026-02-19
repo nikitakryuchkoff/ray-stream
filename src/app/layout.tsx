@@ -15,23 +15,20 @@ const SITE_URL = "https://raystream.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RayStream International — Трейдинг и инжиниринг профессионального освещения",
+    default: "RayStream International — Lighting Trading & Engineering",
     template: "%s | RayStream International",
   },
   description:
-    "RayStream International — глобальный сорсинг, светотехнический аудит и поставка профессионального освещения.",
+    "RayStream International — global sourcing, lighting audit and professional lighting supply.",
   keywords: [
-    "профессиональное освещение",
-    "светотехническое оборудование",
-    "промышленное освещение",
-    "архитектурное освещение",
-    "LED освещение",
-    "светотехнический аудит",
-    "сорсинг освещения Китай",
-    "поставка светотехники",
     "lighting trading",
     "lighting engineering",
     "professional lighting",
+    "industrial lighting",
+    "architectural lighting",
+    "LED lighting",
+    "lighting audit",
+    "lighting sourcing",
     "RayStream",
   ],
   authors: [{ name: "RayStream International Limited" }],
@@ -54,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={dmSans.variable}>
+    <html lang="en" className={dmSans.variable}>
       <body>{children}</body>
     </html>
   );

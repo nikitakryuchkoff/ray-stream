@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import type { Lang, Translations } from "@/i18n/types";
-import LangSwitcher from "@/components/ui/LangSwitcher";
+import type { Translations } from "@/content/types";
 import s from "./Header.module.css";
 
 const NAV_ITEMS = [
@@ -10,7 +9,7 @@ const NAV_ITEMS = [
   { href: "#geo", key: "nav_geo" },
 ] as const;
 
-export default function Header({ lang, t }: { lang: Lang; t: Translations }) {
+export default function Header({ t }: { t: Translations }) {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,7 +70,6 @@ export default function Header({ lang, t }: { lang: Lang; t: Translations }) {
               {t[key]}
             </button>
           ))}
-          <LangSwitcher lang={lang} />
           <button
             className={`${s.navLink} ${s.contactBtn}`}
             onClick={() => scrollTo("#ct")}
@@ -104,7 +102,6 @@ export default function Header({ lang, t }: { lang: Lang; t: Translations }) {
         <button className={s.mobileNavLink} onClick={() => scrollTo("#ct")}>
           {t.nav_contact}
         </button>
-        <LangSwitcher lang={lang} />
       </div>
     </>
   );

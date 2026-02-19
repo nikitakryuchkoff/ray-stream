@@ -1,4 +1,4 @@
-import type { Translations } from '@/i18n/types';
+import type { Translations } from '@/content/types';
 import { aboutMetrics } from '@/data/metrics';
 import Reveal from '@/components/ui/Reveal';
 import Separator from '@/components/ui/Separator';

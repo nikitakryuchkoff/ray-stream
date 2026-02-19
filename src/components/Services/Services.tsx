@@ -1,4 +1,4 @@
-import type { Translations } from '@/i18n/types';
+import type { Translations } from '@/content/types';
 import Reveal from '@/components/ui/Reveal';
 import { IndustrialIcon, ArchitecturalIcon, InteriorIcon, SmartIcon } from './ServiceIcon';
 import s from './Services.module.css';
