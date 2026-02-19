@@ -1,17 +1,52 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { CONTACT_EMAIL_REGEX, CONTACT_FORM_LIMITS } from "@/constants";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const normalizeInput = (value: unknown): string =>
+  typeof value === "string" ? value.trim() : "";
+
+const validateContactPayload = (payload: {
+  name: string;
+  email: string;
+  message: string;
+}): string | null => {
+  if (!payload.name) return "Name is required.";
+  if (payload.name.length < CONTACT_FORM_LIMITS.nameMinLength) {
+    return `Name must contain at least ${CONTACT_FORM_LIMITS.nameMinLength} characters.`;
+  }
+  if (payload.name.length > CONTACT_FORM_LIMITS.nameMaxLength) {
+    return `Name must contain at most ${CONTACT_FORM_LIMITS.nameMaxLength} characters.`;
+  }
+
+  if (!payload.email) return "Email is required.";
+  if (!CONTACT_EMAIL_REGEX.test(payload.email)) {
+    return "Email is invalid.";
+  }
+
+  if (!payload.message) return "Message is required.";
+  if (payload.message.length > CONTACT_FORM_LIMITS.messageMaxLength) {
+    return `Message must contain at most ${CONTACT_FORM_LIMITS.messageMaxLength} characters.`;
+  }
+
+  return null;
+};
+
 export const POST = async (req: Request) => {
   try {
-    const { name, email, message } = await req.json();
+    const payload = await req.json();
+    const name = normalizeInput(payload.name);
+    const email = normalizeInput(payload.email);
+    const message = normalizeInput(payload.message);
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 },
-      );
+    const validationError = validateContactPayload({
+      name,
+      email,
+      message,
+    });
+    if (validationError) {
+      return NextResponse.json({ error: validationError }, { status: 400 });
     }
 
     await resend.emails.send({

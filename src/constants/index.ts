@@ -1,4 +1,5 @@
 export { HEADER_NAV_ITEMS } from "./header";
+export { CONTACT_EMAIL_REGEX, CONTACT_FORM_LIMITS } from "./contact";
 export { PARTNER_MARQUEE_REPEAT_COUNT } from "./partners";
 export { ORGANIZATION_JSON_LD, SITE_URL } from "./site";
 export { SERVICE_CARDS } from "./services";
