@@ -16,7 +16,7 @@ export default function Geography({ t }: { t: Translations }) {
   const tailText = hasTail ? tailParts.join(". ") : "";
 
   return (
-    <section className={s.section} id="geo">
+    <section className={s.section} id="geo" data-header-theme="dark">
       <div className="wrap">
         <div className={s.header}>
           <Reveal>

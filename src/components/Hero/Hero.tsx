@@ -38,7 +38,7 @@ export default function Hero({ t }: { t: Translations }) {
   };
 
   return (
-    <section className={s.hero} id="hero">
+    <section className={s.hero} id="hero" data-header-theme="dark">
       <div className={s.glow} />
       <div className={s.rays}>
         <div className={s.ray} />

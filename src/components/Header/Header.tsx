@@ -48,31 +48,38 @@ function isDarkBackground([r, g, b]: Rgb): boolean {
   return yiq < 140;
 }
 
-function getSectionThemeFromPoint(x: number, y: number): boolean | null {
-  const sampledElement = document.elementFromPoint(x, y);
-  if (!sampledElement) return null;
+function getSectionThemeAtY(y: number): boolean | null {
+  const sections = Array.from(
+    document.querySelectorAll<HTMLElement>("section[id], [data-header-theme]"),
+  );
+  if (!sections.length) return null;
 
-  const section = sampledElement.closest(
-    "section, [data-header-theme]",
-  ) as HTMLElement | null;
+  const activeSection =
+    sections.find((section) => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= y && rect.bottom > y;
+    }) ??
+    sections.reduce(
+      (closest, section) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - y);
+        if (!closest || distance < closest.distance) {
+          return { section, distance };
+        }
+        return closest;
+      },
+      null as { section: HTMLElement; distance: number } | null,
+    )?.section;
 
-  if (section) {
-    const explicitTheme = section.dataset.headerTheme;
-    if (explicitTheme === "dark") return true;
-    if (explicitTheme === "light") return false;
+  if (!activeSection) return null;
 
-    const sectionBg = parseRgb(
-      window.getComputedStyle(section).backgroundColor,
-    );
+  const explicitTheme = activeSection.dataset.headerTheme;
+  if (explicitTheme === "dark") return true;
+  if (explicitTheme === "light") return false;
 
-    if (sectionBg && sectionBg[3] > 0) {
-      return isDarkBackground([sectionBg[0], sectionBg[1], sectionBg[2]]);
-    }
-  }
-
-  const fallbackBg = getEffectiveBackground(sampledElement);
-  if (!fallbackBg) return null;
-  return isDarkBackground(fallbackBg);
+  const bg = getEffectiveBackground(activeSection);
+  if (!bg) return null;
+  return isDarkBackground(bg);
 }
 
 export default function Header({ t }: { t: Translations }) {
@@ -88,13 +95,13 @@ export default function Header({ t }: { t: Translations }) {
       setScrolled(window.scrollY > 30);
       if (menuOpen) return;
 
-      const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 60;
-      const sampleX = Math.round(window.innerWidth / 2);
+      const headerBottom =
+        headerRef.current?.getBoundingClientRect().bottom ?? 60;
       const sampleY = Math.min(
         window.innerHeight - 1,
-        Math.round(headerHeight + 8),
+        Math.round(headerBottom + 8),
       );
-      const sectionIsDark = getSectionThemeFromPoint(sampleX, sampleY);
+      const sectionIsDark = getSectionThemeAtY(sampleY);
       if (sectionIsDark === null) return;
       setDark(sectionIsDark);
     };
