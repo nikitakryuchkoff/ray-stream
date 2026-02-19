@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type { Translations } from "@/content/types";
 import s from "./Header.module.css";
 import classNames from "classnames";
@@ -76,6 +76,7 @@ function getSectionThemeFromPoint(x: number, y: number): boolean | null {
 }
 
 export default function Header({ t }: { t: Translations }) {
+  const headerRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,8 +88,12 @@ export default function Header({ t }: { t: Translations }) {
       setScrolled(window.scrollY > 30);
       if (menuOpen) return;
 
+      const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 60;
       const sampleX = Math.round(window.innerWidth / 2);
-      const sampleY = Math.min(window.innerHeight - 1, 72);
+      const sampleY = Math.min(
+        window.innerHeight - 1,
+        Math.round(headerHeight + 8),
+      );
       const sectionIsDark = getSectionThemeFromPoint(sampleX, sampleY);
       if (sectionIsDark === null) return;
       setDark(sectionIsDark);
@@ -105,11 +110,15 @@ export default function Header({ t }: { t: Translations }) {
 
     window.addEventListener("scroll", onViewportChange, { passive: true });
     window.addEventListener("resize", onViewportChange);
+    window.visualViewport?.addEventListener("resize", onViewportChange);
+    window.visualViewport?.addEventListener("scroll", onViewportChange);
     onViewportChange();
 
     return () => {
       window.removeEventListener("scroll", onViewportChange);
       window.removeEventListener("resize", onViewportChange);
+      window.visualViewport?.removeEventListener("resize", onViewportChange);
+      window.visualViewport?.removeEventListener("scroll", onViewportChange);
     };
   }, [menuOpen]);
 
@@ -131,7 +140,7 @@ export default function Header({ t }: { t: Translations }) {
 
   return (
     <>
-      <header className={cls}>
+      <header ref={headerRef} className={cls}>
         <a href="#" className={s.logo}>
           RAYSTREAM<span className={s.logoSub}>INT&apos;L</span>
         </a>
