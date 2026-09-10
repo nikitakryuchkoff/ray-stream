@@ -46,7 +46,7 @@ export const content: Content = {
   geo_label: "Geography",
   geo_h2: "Global supply network",
   geo_desc:
-    "Our Hong Kong headquarters ensures direct financial and trade operations with factories. The engineering hub in Tashkent guarantees responsive technical support and project management. Leveraging a network of local partners, we've built seamless logistics across China, UAE, Turkey and CIS countries.",
+    "Our Hong Kong headquarters ensures direct financial and trade operations with factories, supported by a team of qualified engineers providing responsive technical support and project management. Leveraging a network of local partners, we've built seamless logistics across China, UAE, Turkey, and CIS countries.",
   gs_years: "years of experience",
   gs_factories: "factory partners",
   gs_regions: "supply regions",

@@ -1,75 +1,62 @@
-# RayStream International — Next.js Website
+# RayStream International - Vite + React
 
-## Architecture
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── globals.css         # CSS variables, resets, utilities
-│   ├── layout.tsx          # Root layout + font + LangProvider
-│   └── page.tsx            # Home page (section composition)
-│
-├── components/
-│   ├── ui/                 # Reusable UI primitives
-│   │   ├── Reveal          # Scroll-triggered reveal animation (up/left/scale)
-│   │   ├── ClipReveal      # Text clip-mask reveal animation
-│   │   ├── ScrollProgress  # Fixed top scroll progress bar
-│   │   ├── Separator       # Animated horizontal line
-│   │   ├── Counter         # Animated number counter
-│   │   └── LangSwitcher    # RU/EN toggle buttons
-│   │
-│   ├── Header/             # Fixed nav, burger menu, scroll-aware theme
-│   ├── Hero/               # Full-screen hero with parallax, rays, video placeholder
-│   ├── About/              # Company info grid + animated metrics
-│   ├── Services/           # 2×2 card grid with SVG icons
-│   ├── Advantages/         # 4-column advantages with hover accents
-│   ├── Geography/          # D3 world map (TopoJSON) + city markers + routes
-│   ├── Partners/           # Infinite marquee scroll
-│   ├── Contact/            # Form with animated inputs
-│   └── Footer/             # Site footer with nav links
-│
-├── hooks/                  # Custom React hooks
-│   ├── useInView.ts        # IntersectionObserver wrapper
-│   ├── useCounter.ts       # Animated count-up
-│   └── useScrollProgress.ts # Scroll position tracking
-│
-├── context/
-│   └── LangContext.tsx      # i18n context (RU/EN)
-│
-├── i18n/
-│   ├── types.ts            # Translation key types
-│   ├── translations.ts     # RU + EN dictionaries
-│   └── index.ts
-│
-└── data/                   # Static data (cities, metrics, advantages, partners)
-    ├── cities.ts
-    ├── metrics.ts
-    ├── advantages.ts
-    └── partners.ts
-```
-
-## Getting Started
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+- Frontend: http://localhost:3000
 
-## Tech Stack
+## Production (local preview)
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **CSS Modules** (per-component scoped styles)
-- **d3-geo + topojson-client** (real world map)
-- **DM Sans** (Google Fonts via next/font)
+```bash
+npm run build
+npm start
+```
 
-## Key Design Decisions
+`npm start` runs Vite preview on port `3000`.
 
-- **CSS Modules** for style isolation — no global class collisions
-- **Data layer** separated from components (cities, metrics, advantages, partners)
-- **Custom hooks** encapsulate IntersectionObserver, scroll tracking, counter logic
-- **Context-based i18n** — no external i18n library, simple RU/EN toggle
-- **Reveal system** — single `<Reveal>` component handles 3 animation variants with configurable delays
-- **WorldMap** renders real country borders from TopoJSON via d3-geo projection
+## Environment variables
+
+Create `.env.local` (or `.env`) with:
+
+```bash
+VITE_CONTACT_FORM_ENDPOINT=https://your-endpoint.example
+CONTACT_EMAIL=almazovrf@gmail.com
+```
+
+`VITE_CONTACT_FORM_ENDPOINT` is optional.  
+If it is empty, frontend sends the form to `/send.php` on the same host.
+
+`CONTACT_EMAIL` is used by `public/send.php` (PHP handler for Beget/shared hosting).
+
+## Beget deploy
+
+1. Run `npm run build`.
+2. Upload all files from `dist/` into `public_html/`.
+3. Ensure `send.php` is present in `public_html/` (it is copied automatically from `public/` during build).
+4. Set `CONTACT_EMAIL` in hosting environment, or edit `send.php` fallback recipient.
+5. Keep `.htaccess` in `public_html/` for SPA routing.
+
+## Stack
+
+- React 18 + TypeScript
+- Vite
+- PHP form handler for shared hosting (`send.php`)
+- Optional external endpoint via `VITE_CONTACT_FORM_ENDPOINT`
+- CSS Modules + global stylesheet
+- d3-geo + topojson-client
+
+## Redesign (selected direction 1)
+
+Homepage now focuses on Flex Solution, Indoor Solution and Outdoor Solution. Each navigation item reveals equipment categories; category selection opens an accessible native dialog and can populate the enquiry message. Existing contact endpoint/PHP integration remains in place. Vite alone does not execute PHP.
+
+Illustrative generated images live in public/images. Replace with approved equipment photography and confirmed assortment before presenting a SKU catalogue. No product specifications or prices are asserted.
+
+Validation evidence: design-qa.md and design/. Production build refreshed; the pre-existing dist.zip was not replaced.
+
+## Vercel
+
+`vercel.json` selects Vite and `build:vercel`, which excludes the PHP handler from the static output. `/send.php` routes to the Node function in `api/contact.js`. Set server-only `RESEND_API_KEY`, `CONTACT_EMAIL`, and optionally `CONTACT_FROM` in Vercel to enable email delivery. Without configuration, the endpoint returns 503 and the form shows its error state. No credentials belong in Git.

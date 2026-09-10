@@ -1,0 +1,17 @@
+DirectoryIndex index.html
+
+Options -MultiViews
+RewriteEngine On
+
+# Never rewrite static files and backend endpoint
+RewriteRule ^assets/ - [L,NC]
+RewriteRule ^send\.php$ - [L,NC]
+
+# Never rewrite requests that look like real files (js, css, png, etc.)
+RewriteCond %{REQUEST_URI} \.[a-z0-9]{1,8}$ [NC]
+RewriteRule ^ - [L]
+
+# SPA fallback for client routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

@@ -41,42 +41,15 @@ const Hero = ({ t }: { t: Translations }) => {
             <p className={styles.sub}>{t.hero_sub}</p>
           </Reveal>
           <Reveal delay={3} forceVisible={isHeroVisible}>
-            <button className={styles.btn} onClick={() => scrollToSection("#ct")}>
+            <button
+              className={styles.btn}
+              onClick={() => scrollToSection("#ct")}
+            >
               <span>{t.hero_cta}</span>
               <span className={styles.arrow}>→</span>
             </button>
           </Reveal>
         </div>
-      </div>
-      <div
-        className={classNames(
-          styles.videoWrap,
-          styles.enter,
-          styles.enterVideo,
-          isHeroVisible && styles.enterVisible,
-        )}
-      >
-        <Reveal variant="scale" delay={4} forceVisible={isHeroVisible}>
-          <div className={styles.vc}>
-            <div className={styles.beams}>
-              <div className={styles.beam} />
-              <div className={styles.beam} />
-              <div className={styles.beam} />
-            </div>
-            <div className={styles.vp}>
-              <div className={styles.playBtn}>
-                <svg viewBox="0 0 16 16">
-                  <polygon points="4,2 14,8 4,14" />
-                </svg>
-              </div>
-              <span className={styles.videoLabel}>{t.video_label}</span>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-      <div className={styles.scrollInd}>
-        <span>Scroll</span>
-        <div className={styles.scrollMouse} />
       </div>
     </section>
   );

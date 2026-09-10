@@ -1,0 +1,7 @@
+.env*
+!.env.example
+.git
+design
+.playwright-mcp
+dist.zip
+dist

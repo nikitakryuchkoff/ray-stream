@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { CONTACT_EMAIL_REGEX, CONTACT_FORM_LIMITS } from "@/constants";
 
@@ -36,6 +34,9 @@ const INITIAL_TOUCHED_FIELDS: Record<ContactFormField, boolean> = {
   message: false,
 };
 const STATUS_VISIBILITY_TIMEOUT_MS = 7000;
+const CONTACT_FORM_ENDPOINT =
+  (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim() ||
+  `${import.meta.env.BASE_URL}send.php`;
 
 const setFieldError = (
   currentErrors: ContactFormErrors,
@@ -174,16 +175,18 @@ export const useContactForm = (): UseContactFormResult => {
       setStatus("sending");
 
       try {
-        const response = await fetch("/api/contact", {
+        const response = await fetch(CONTACT_FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formValues),
         });
 
-        if (!response.ok) {
+        if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
           throw new Error("Contact request failed");
         }
 
+        const result = await response.json();
+        if (result.ok === false) throw new Error("Contact request rejected");
         setStatus("success");
         setFormValues(INITIAL_FORM_VALUES);
         setFieldErrors({});
@@ -205,3 +208,4 @@ export const useContactForm = (): UseContactFormResult => {
     submitForm,
   };
 };
+
