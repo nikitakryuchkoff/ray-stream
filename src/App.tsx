@@ -16,6 +16,8 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [selected, setSelected] = useState<typeof solutions[number] | null>(null);
   const [category, setCategory] = useState('');
+  const [application, setApplication] = useState(0);
+  const applications = [{name:'Architecture', image:'architecture', copy:'Light as a building element.'}, {name:'Interiors', image:'hero', copy:'Comfort, atmosphere and precision.'}, {name:'Landscape', image:'landscape', copy:'Reveal the beauty beyond the walls.'}];
   const dialog = useRef<HTMLDialogElement>(null);
   const header = useRef<HTMLElement>(null);
   const form = useContactForm();
@@ -38,7 +40,7 @@ export default function App() {
     return () => breakpoint.removeEventListener('change', resetNavigation);
   }, []);
   useEffect(() => {
-    const elements = document.querySelectorAll('.solutions > h2, .solution-card, .support, .contact-intro, .contact form');
+    const elements = document.querySelectorAll('.section-heading, .solution-card, .equipment, .process, .contact-intro, .contact form');
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
     }), { threshold: .1 });
@@ -58,7 +60,7 @@ export default function App() {
           {menu === s.id && <div className="mega-menu" id={`menu-${s.id}`}>
             <div><span className="eyebrow">Explore our solutions</span><h2>{s.title}</h2><p>{s.description}</p><button className="text-link" onClick={() => openSolution(s)}>Explore direction <ArrowRight /></button></div>
             <div className="category-links">{s.categories.map(c => <button key={c} onClick={() => openSolution(s, c)}>{c}<ArrowRight size={22} /></button>)}</div>
-            <img src={`/images/${s.id}.png`} alt={s.title + ' equipment'} />
+            <img src={`/images/${s.id === 'flex' ? 'flex-loop' : s.id}.png`} alt={s.title + ' equipment'} />
           </div>}
         </div>)}
         <a className="nav-link" href="#contact" onClick={() => { setMobile(false); setMenu(null); }}>Contact</a>
@@ -68,11 +70,13 @@ export default function App() {
     <main id="main">
       <HeroSlider suspended={!!menu || mobile || !!selected} onExplore={id => { const solution = solutions.find(s => s.id === id); if (solution) openSolution(solution); }} />
       <section id="solutions" className="solutions">
-        <h2>One vision.<br />Three solutions.</h2>
-        <div className="solution-grid">{solutions.map(s => <button key={s.id} className="solution-card" onClick={() => openSolution(s)}><div className="image-frame"><img loading="lazy" src={`/images/${s.id}.png`} alt={s.title === 'Flex Solution' ? 'Warm flexible neon lighting' : s.title === 'Indoor Solution' ? 'Black precision track spotlight' : 'Exterior linear wall washer'} /></div><h3>{s.title}</h3><ArrowRight size={30} weight="light" /></button>)}</div>
+        <div className="section-heading"><div><span className="eyebrow">Our solutions</span><h2>Three expressions.<br />One language.</h2></div><p>Light is a material. We provide flexible lines, precision luminaires and exterior systems to help you shape atmosphere, define space and bring architecture to life.</p></div>
+        <div className="solution-grid">{solutions.map((s, i) => <article key={s.id} className="solution-card"><button className="solution-visual" onClick={() => openSolution(s)} aria-label={`Explore ${s.title}`}><div className="image-frame"><img loading="lazy" src={`/images/${s.id === 'flex' ? 'flex-loop' : s.id}.png`} alt={s.label} /></div><span className="image-action"><ArrowRight size={24} /></span></button><h3><span>0{i+1}</span>{s.title}</h3><div className="solution-categories">{s.categories.slice(0,3).map(c => <button key={c} onClick={() => openSolution(s,c)}>{c}</button>)}<button onClick={() => openSolution(s)} aria-label={`View all ${s.title}`}><ArrowRight size={20} /></button></div></article>)}</div>
       </section>
-      <section className="support"><span className="eyebrow">From idea to specification</span><div><h2>The right light.<br />For your vision.</h2><p>We help you select equipment, coordinate specifications and bring your lighting concept to life. From flexible lines to interior and exterior luminaires, every selection starts with your space.</p></div></section>
-      <section className="contact" id="contact"><div className="contact-intro"><span className="eyebrow">Let’s work together</span><h2>Let’s find<br />your light.</h2><p>Tell us about your space.<br />We’ll help you find the right solution.</p></div>
+      <section className="equipment" id="equipment"><div><span className="eyebrow">Light, in detail.</span><h2>Purpose-built<br />equipment for<br />beautiful results.</h2></div><div className="equipment-grid">{[{name:'Neon flex',image:'flex',solution:0,category:'Flexible neon'},{name:'Downlights',image:'downlight',solution:1,category:'Downlights'},{name:'Linear systems',image:'linear',solution:1,category:'Linear lighting'},{name:'Track lighting',image:'indoor',solution:1,category:'Track lighting'}].map(item => <button className="equipment-card" key={item.name} onClick={() => openSolution(solutions[item.solution],item.category)}><div className="image-frame"><img loading="lazy" src={`/images/${item.image}.png`} alt={item.name} /></div><h3>{item.name}</h3><span>View equipment <ArrowRight size={17} /></span></button>)}</div></section>
+      <section className="applications"><div className="application-heading"><div><span className="eyebrow">A different light.</span><h2>For every space.</h2></div><div className="application-tabs" role="tablist" aria-label="Lighting applications">{applications.map((a,i) => <button id={`application-tab-${i}`} key={a.name} role="tab" aria-selected={application===i} aria-controls="application-panel" tabIndex={application===i?0:-1} onClick={()=>setApplication(i)} onKeyDown={e=>{if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?2:(i+(e.key==='ArrowRight'?1:2))%3;setApplication(next);document.getElementById(`application-tab-${next}`)?.focus();}}}>{a.name}</button>)}</div></div><div className="application-panel" id="application-panel" role="tabpanel" aria-labelledby={`application-tab-${application}`}><img key={application} src={`/images/${applications[application].image}.png`} alt={`${applications[application].name} lighting inspiration`} /><div><h3>{applications[application].name}</h3><p>{applications[application].copy}</p></div></div></section>
+      <section className="process"><div><span className="eyebrow">Our process</span><h2>From idea to reality.</h2></div>{[{title:'Share your space.',text:'Tell us about your project and lighting requirements.'},{title:'Select the equipment.',text:'We recommend the right solutions for your needs.'},{title:'Refine the specification.',text:'We coordinate details and support your next steps.'}].map((step,i)=><div className="process-step" key={step.title}><span>0{i+1}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</section>
+      <section className="contact" id="contact"><img className="contact-image" src="/images/flex-loop.png" alt="Warm flexible light in detail" loading="lazy" /><div className="contact-intro"><span className="eyebrow">Let’s work together</span><h2>Let’s shape<br />your space.</h2><p>Tell us about your space.<br />We’ll help you find the right solution.</p></div>
         <form onSubmit={form.submitForm} noValidate><div className="form-row">{(['name', 'email'] as const).map(f => <label key={f} htmlFor={f}>{f === 'name' ? 'Your name' : 'Email address'}<input id={f} name={f} autoComplete={f} type={f === 'email' ? 'email' : 'text'} value={form.formValues[f]} onChange={e => form.updateField(f, e.target.value)} onBlur={() => form.touchField(f)} aria-invalid={!!form.fieldErrors[f]} aria-describedby={form.fieldErrors[f] ? `${f}-error` : undefined} />{form.fieldErrors[f] && <small id={`${f}-error`} className="error">{form.fieldErrors[f]}</small>}</label>)}</div>
         <label htmlFor="message">Your project<textarea id="message" maxLength={400} rows={4} placeholder="A space, an idea, a lighting requirement…" value={form.formValues.message} onChange={e => form.updateField('message', e.target.value)} onBlur={() => form.touchField('message')} aria-invalid={!!form.fieldErrors.message} aria-describedby={form.fieldErrors.message ? 'message-error' : undefined} /></label>{form.fieldErrors.message && <small id="message-error" className="error">{form.fieldErrors.message}</small>}
         <div className="form-bottom"><button className="pill dark" disabled={form.isSubmitting}>{form.isSubmitting ? 'Sending…' : 'Send enquiry'}<ArrowRight size={22} /></button><span>{form.formValues.message.length}/400</span></div>

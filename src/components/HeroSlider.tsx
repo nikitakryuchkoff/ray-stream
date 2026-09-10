@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Pause, Play } from '@phosphor-icons/react';
 
 const slides = [
-  { solution: 'indoor', name: 'Indoor Solution', image: 'hero', lines: ['Light shapes', 'everything.'], subtitle: 'Architectural lighting by RayStream', alt: 'Warm architectural lighting in a contemporary stone lobby' },
+  { solution: 'indoor', name: 'Indoor Solution', image: 'architecture', lines: ['Beyond', 'the visible.'], subtitle: 'Architectural lighting solutions that shape atmosphere and bring spaces to life.', alt: 'Warm architectural lighting in a contemporary stone lobby' },
   { solution: 'flex', name: 'Flex Solution', image: 'flex', lines: ['Freedom', 'in every line.'], subtitle: 'Flexible light. Endless possibilities.', alt: 'A glowing flexible neon line on a charcoal surface' },
   { solution: 'outdoor', name: 'Outdoor Solution', image: 'outdoor', lines: ['Make the night', 'extraordinary.'], subtitle: 'Bring architecture and landscapes to life.', alt: 'Warm exterior lighting revealing the texture of a stone wall' },
 ];
@@ -50,7 +50,7 @@ export function HeroSlider({ onExplore, suspended }: { onExplore: (id: string) =
     onTouchEnd={event => { if (!touch.current) return; const dx = event.changedTouches[0].clientX - touch.current.x; const dy = event.changedTouches[0].clientY - touch.current.y; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) { setPlaying(false); select(active + (dx < 0 ? 1 : -1)); } touch.current = null; }}>
     <div className="slide-images" aria-hidden="true">{slides.map((s, i) => <img key={s.image} className={`slide-image slide-${s.solution} ${active === i ? 'active' : ''}`} src={`/images/${s.image}.png`} alt="" />)}</div>
     <div className="hero-content" key={slide.solution} role="group" aria-roledescription="slide" aria-label={`${active + 1} of ${slides.length}: ${slide.name}`}>
-      <span className="slide-eyebrow">RayStream / {slide.name}</span>
+      <span className="slide-eyebrow">Architectural lighting by RayStream</span>
       <h1>{slide.lines.map(line => <span className="headline-line" key={line}><span>{line}</span></span>)}</h1>
       <p>{slide.subtitle}</p>
       <button className="pill light" onClick={() => onExplore(slide.solution)}>Explore {slide.solution === 'indoor' ? 'indoor' : slide.solution} <ArrowRight size={22} weight="light" /></button>
