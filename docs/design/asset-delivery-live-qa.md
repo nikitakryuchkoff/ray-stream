@@ -1,0 +1,11 @@
+# Production asset delivery acceptance
+
+12 October 2026. Source fix: `01bc963e9e3a47be238c49bf803a85515ea6523c`; Vercel production `dpl_2yqjD6VnJBKtRuCYgrUj3o9ZP2cq`, READY. API confirms raystream.hk points to this deployment.
+
+The previous custom-domain JS response stalled at 20,814 of 697,211 bytes. The same file transfers completely through the public production alias. The user explicitly approved opening that alias while retaining authentication on previews and unique deployment URLs. Project `ssoProtection.deploymentType` is `prod_deployment_urls_and_all_previews`, with authentication enabled. Anonymous production alias JS returned HTTP 200, all 697,211 bytes, application/javascript and Access-Control-Allow-Origin: *. Direct unique-deployment probes could not connect in this network; their protection is confirmed by configured scope and documented Vercel behavior, not by a successful anonymous HTTP probe.
+
+The same previously blank tab at https://raystream.hk/ now renders the full home page, Instrument Sans/Inter fonts, architecture photograph and product/category photographs. Network evidence shows HTTP 200 for the new JS, CSS, both WOFF2 fonts and visible WebP images. Images finish with nonzero natural widths. The initial screenshot preceded image completion; the saved acceptance screenshot shows the completed page.
+
+Verified clicks: Home -> Catalog, search SF24 -> one family, SF24 -> product, reload direct product URL, Enquire -> /contact?model=SF24. Product canonical remains https://raystream.hk/products/sf24. At 390x844, /catalog/wall-grazer renders five families and loaded photographs with no horizontal overflow. Browser request evidence confirms POST https://raystream.hk/send.php, independently of asset origin. A separate real HTTP request returns JSON 503 Email delivery is not configured. Provider configuration and mailbox delivery remain pending; no successful real email delivery is claimed.
+
+Independent regression: asset-delivery-business-qa.md. Screenshots/measurements: outputs/asset-delivery-qa/. Temporary cache and viewport overrides were reset; production tab ends on the home page. TLS validation and preview authentication remain enabled, no bypass credential is embedded, and DNS/mail records were not changed.
