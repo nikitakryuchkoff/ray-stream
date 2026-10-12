@@ -1,5 +1,6 @@
 import { SITE_URL } from '../constants/site';
 import type { Category, Product } from '../data/catalog';
+import { assetUrl } from './assetUrl';
 
 export function updatePageMetadata(path: string, { category, product, found }: { category?: Category; product?: Product; found: boolean }) {
   let title = 'Raystream — Light, shaped around architecture.';
@@ -13,6 +14,7 @@ export function updatePageMetadata(path: string, { category, product, found }: {
   if (product) { title = `${product.name.startsWith(product.model) ? product.name : `${product.model} — ${product.name}`} | Raystream`; description = product.summary; image = product.images[0]; }
   if (!found) { title = 'Page not found | Raystream'; description = 'Explore the Raystream lighting catalog or contact the team about your project.'; }
   const canonical = new URL(path, SITE_URL).href;
+  image = assetUrl(image);
   document.title = title;
   const setMeta = (attribute: 'name' | 'property', name: string, content: string) => {
     let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);

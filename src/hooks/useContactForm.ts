@@ -36,7 +36,7 @@ const INITIAL_TOUCHED_FIELDS: Record<ContactFormField, boolean> = {
 const STATUS_VISIBILITY_TIMEOUT_MS = 7000;
 const CONTACT_FORM_ENDPOINT =
   (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim() ||
-  `${import.meta.env.BASE_URL}send.php`;
+  '/send.php';
 
 const setFieldError = (
   currentErrors: ContactFormErrors,

@@ -34,7 +34,7 @@ See `docs/catalog-notes.md`, `docs/migration-map.json`, `docs/asset-registry.jso
 
 ## Apache + PHP / shared hosting
 
-1. Run `npm run build`.
+1. Run `npm run build` with `VITE_ASSET_ORIGIN` empty or unset for a self-contained Apache deployment.
 2. Upload the **contents** of `dist/`, including hidden `.htaccess`, to the domain document root (for example `public_html/`). Deploy at the root of `raystream.hk`, not a subdirectory.
 3. Enable PHP 7.4+ with `mbstring`, Apache `mod_rewrite` and `.htaccess` overrides. Keep `send.php` in the document root.
 4. Set server environment `CONTACT_EMAIL=info@raystream.hk`; PHP fallback recipient is the same. A frontend `.env.local` does not configure PHP on the host.
@@ -42,7 +42,7 @@ See `docs/catalog-notes.md`, `docs/migration-map.json`, `docs/asset-registry.jso
 6. Add the provider's SPF/DKIM records and your DMARC policy; confirm the recipient mailbox exists.
 7. Open a product URL directly and refresh it. Verify assets, metadata and POST `/send.php`. Send one authorized enquiry and confirm receipt (Inbox/Spam and mail logs). PHP `mail()` success confirms MTA acceptance, not inbox delivery.
 
-The Vite base is `/`: assets and the default form endpoint resolve from the root on nested pages. `public/.htaccess` is copied to `dist/` and preserves real files and `/send.php` before the SPA fallback.
+Without `VITE_ASSET_ORIGIN`, the Vite base is `/` and assets resolve from the root on nested pages. The default form endpoint always remains same-origin `/send.php`, including when production uses an external asset origin. `public/.htaccess` is copied to `dist/` and preserves real files and `/send.php` before the SPA fallback.
 
 ## Vercel
 
@@ -62,8 +62,14 @@ Only set `VITE_CONTACT_FORM_ENDPOINT` for a compatible handler: request JSON `{n
 
 ## Delivery status
 
+### Public asset delivery
+
+Production sets `VITE_ASSET_ORIGIN=https://ray-stream-twice322s-projects.vercel.app`. Vite emits JS, CSS and font URLs against this public production alias; the catalog asset helper applies the same origin to equipment, accessory and application images. Files remain local to this repository and are published by the same Vercel deployment. Page navigation, canonical URLs and the default `/send.php` POST remain on `raystream.hk`. Open Graph/structured-data images use the asset origin as well. Leave this variable empty for a standalone Apache build, local development and protected previews. The value must be a bare HTTPS origin and contains no credentials.
+
+This addresses the observed full-body transfer failure on the custom-domain connection without moving hosting. The user approved making the current production alias public; Vercel Authentication remains enabled with `prod_deployment_urls_and_all_previews`, protecting preview and unique deployment URLs. Cross-origin static files must retain Vercel's public `Access-Control-Allow-Origin: *` header. No authentication bypass token is embedded in the frontend.
+
 Release source is maintained on `main` at https://github.com/nikitakryuchkoff/ray-stream. The production target is the existing Vercel project `twice322s-projects/ray-stream`. Release from the committed checkout and verify the deployment commit before assigning the domain. `raystream.hk` is connected and `www.raystream.hk` redirects to it. Beget remains the authoritative DNS and mailbox provider; only the two web A-record sets were changed during the initial migration. GitHub commit history and Vercel deployment metadata identify the released source.
 
-The compact shadcn Button iteration passed separate local desktop/mobile browser acceptance and independent form/model checks; see `docs/design/shadcn-buttons-qa.md`. The Vercel build and external HTTP checks pass. Public domain HTML references the new JS/CSS and the domain alias points to the release above. Production browser acceptance on the current network remains **blocked**: the latest JS download stops at 20,814 of 697,211 bytes and times out after six seconds. Earlier JS/font browser responses terminated with `ERR_CONNECTION_CLOSED`, and probes of all three recommended IPs stalled near 20 KB. External checks receive the complete new JS and CSS. The exact network cause has not been established; local acceptance is not a passed production browser check.
+The compact shadcn Button iteration passed local desktop/mobile acceptance; see `docs/design/shadcn-buttons-qa.md`. Before the asset-delivery fix, the custom-domain JS request stopped at 20,814 of 697,211 bytes, and browser JS/font requests failed with `ERR_CONNECTION_CLOSED`. The same production JS transferred fully over the technical production alias in the affected network. The optional asset origin targets that working route; the exact cause of the custom-domain network truncation has not been established. Production browser acceptance must verify the completed page, fonts, images and same-origin form request after release.
 
 Production `CONTACT_EMAIL` is `info@raystream.hk`. `RESEND_API_KEY` is still absent; a valid public form request correctly returns JSON 503 rather than confirming delivery. Add the server-only key and verify the `CONTACT_FROM` sender domain in Resend, redeploy, then test delivery and mailbox receipt separately. No successful real email delivery has been verified. PHP could not be executed locally because this environment has no PHP binary.

@@ -2,8 +2,9 @@ import { categories, getProduct, imageSmall } from '../data/catalog';
 import { Arrow, Breadcrumb, ButtonLink, ProjectCTA, TextLink } from '../components/catalog/Layout';
 import { ProductCard } from '../components/catalog/ProductCard';
 import { CategoryCard } from '../components/catalog/CategoryCard';
+import { assetUrl } from '../utils/assetUrl';
 
-const architectureImage = '/catalog/architecture-0.webp';
+const architectureImage = assetUrl('/catalog/architecture-0.webp');
 export function HomePage() {
   return <>
     <section className="hero"><img className="hero-photo" src={architectureImage} alt="Application example: warm linear lighting in a curved waterfront railing" loading="eager" /><div className="hero-copy"><h1>Light, shaped<br />around architecture.</h1><p>Flexible lighting systems for spaces, surfaces and ideas.</p><ButtonLink href="/catalog">Explore the catalog</ButtonLink></div><div className="hero-footer"><div className="hero-index"><span>ARCHITECTURAL LIGHTING</span></div><span>Flexible by design</span></div></section>
