@@ -6,6 +6,10 @@
     {
       "source": "/send.php",
       "destination": "/api/contact"
+    },
+    {
+      "source": "/:path((?!api/|.*\\.[^/]+$).*)",
+      "destination": "/index.html"
     }
   ]
 }

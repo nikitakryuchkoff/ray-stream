@@ -101,7 +101,7 @@ const validateFormValues = (values: ContactFormValues): ContactFormErrors => {
   return nextErrors;
 };
 
-export const useContactForm = (): UseContactFormResult => {
+export const useContactForm = (model?: string): UseContactFormResult => {
   const [formValues, setFormValues] =
     useState<ContactFormValues>(INITIAL_FORM_VALUES);
 
@@ -178,7 +178,8 @@ export const useContactForm = (): UseContactFormResult => {
         const response = await fetch(CONTACT_FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formValues),
+          body: JSON.stringify({ ...formValues, ...(model ? { model } : {}) }),
+          signal: AbortSignal.timeout(15000),
         });
 
         if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
@@ -186,7 +187,7 @@ export const useContactForm = (): UseContactFormResult => {
         }
 
         const result = await response.json();
-        if (result.ok === false) throw new Error("Contact request rejected");
+        if (result.ok !== true) throw new Error("Contact request rejected");
         setStatus("success");
         setFormValues(INITIAL_FORM_VALUES);
         setFieldErrors({});
@@ -195,7 +196,7 @@ export const useContactForm = (): UseContactFormResult => {
         setStatus("error");
       }
     },
-    [formValues],
+    [formValues, model],
   );
 
   return {

@@ -1,0 +1,1583 @@
+[
+  {
+    "source": "https://www.olympialed.com/products-linear-flex-silicone/",
+    "type": "category",
+    "category": "silicone",
+    "destination": "/catalog/silicone"
+  },
+  {
+    "source": "https://www.olympialed.com/products-linear-flex-pvc/",
+    "type": "category",
+    "category": "pvc",
+    "destination": "/catalog/pvc"
+  },
+  {
+    "source": "https://www.olympialed.com/video-lighting/",
+    "type": "category",
+    "category": "video",
+    "destination": "/catalog/video"
+  },
+  {
+    "source": "https://www.olympialed.com/ledwallgrazer/",
+    "type": "category",
+    "category": "wall-grazer",
+    "destination": "/catalog/wall-grazer"
+  },
+  {
+    "source": "https://www.olympialed.com/connectors/",
+    "type": "category",
+    "category": "connectors",
+    "destination": "/catalog/connectors"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/",
+    "type": "category",
+    "category": "mounting",
+    "destination": "/catalog/mounting"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/",
+    "type": "category",
+    "category": "control",
+    "destination": "/catalog/control"
+  },
+  {
+    "source": "https://www.olympialed.com/new-products/",
+    "type": "collection",
+    "category": "new",
+    "destination": "/catalog/new"
+  },
+  {
+    "source": "https://www.olympialed.com/sideview-sf15-led-neon-3/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF15",
+    "destination": "/products/sf15"
+  },
+  {
+    "source": "https://www.olympialed.com/sideview-sf21-led-neon/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF21",
+    "destination": "/products/sf21"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19819",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF16",
+    "destination": "/products/sf16"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19803",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF10",
+    "destination": "/products/sf10"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19827",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF18",
+    "destination": "/products/sf18"
+  },
+  {
+    "source": "https://www.olympialed.com/sideview-sf17-led-neon/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF17",
+    "destination": "/products/sf17"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19795",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF09",
+    "destination": "/products/sf09"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19790",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF08",
+    "destination": "/products/sf08"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=19785",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF06",
+    "destination": "/products/sf06"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=15833",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SP01",
+    "destination": "/products/sp01"
+  },
+  {
+    "source": "https://www.olympialed.com/360-sf24-led-neon/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF24",
+    "destination": "/products/sf24"
+  },
+  {
+    "source": "https://www.olympialed.com/silicone-led-linear-flex-sf28/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF28",
+    "destination": "/products/sf28"
+  },
+  {
+    "source": "https://www.olympialed.com/led-neon-flex-sf34/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF34",
+    "destination": "/products/sf34"
+  },
+  {
+    "source": "https://www.olympialed.com/led-neon-flex-sf33/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF33",
+    "destination": "/products/sf33"
+  },
+  {
+    "source": "https://www.olympialed.com/sp05-led-strip-lights/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SP05",
+    "destination": "/products/sp05"
+  },
+  {
+    "source": "https://www.olympialed.com/sf05-led-strip-lights/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF05",
+    "destination": "/products/sf05"
+  },
+  {
+    "source": "https://www.olympialed.com/sf31-led-neon-flex/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF31",
+    "destination": "/products/sf31"
+  },
+  {
+    "source": "https://www.olympialed.com/sf41-led-neon-flex/",
+    "type": "product family",
+    "category": "silicone",
+    "model": "SF41",
+    "destination": "/products/sf41"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=17634",
+    "type": "product family",
+    "category": "pvc",
+    "model": "F15",
+    "destination": "/products/f15"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=18127",
+    "type": "product family",
+    "category": "pvc",
+    "model": "F21",
+    "destination": "/products/f21"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=18157",
+    "type": "product family",
+    "category": "pvc",
+    "model": "F16",
+    "destination": "/products/f16"
+  },
+  {
+    "source": "https://www.olympialed.com/sfp16-flexible-led-video-lighting/",
+    "type": "product family",
+    "category": "video",
+    "model": "SFP16",
+    "destination": "/products/sfp16"
+  },
+  {
+    "source": "https://www.olympialed.com/sfp40-flexible-led-video-lighting/",
+    "type": "product family",
+    "category": "video",
+    "model": "SFP40",
+    "destination": "/products/sfp40"
+  },
+  {
+    "source": "https://www.olympialed.com/sfw20-silicone-flexible-led-wall-grazer/",
+    "type": "product family",
+    "category": "wall-grazer",
+    "model": "SFW20",
+    "destination": "/products/sfw20"
+  },
+  {
+    "source": "https://www.olympialed.com/aw01-flexible-led-wall-grazer/",
+    "type": "product family",
+    "category": "wall-grazer",
+    "model": "AW01",
+    "destination": "/products/aw01"
+  },
+  {
+    "source": "https://www.olympialed.com/lw01-rigid-led-wall-grazer/",
+    "type": "product family",
+    "category": "wall-grazer",
+    "model": "LW01",
+    "destination": "/products/lw01"
+  },
+  {
+    "source": "https://www.olympialed.com/lw06-rigid-led-wall-washer/",
+    "type": "product family",
+    "category": "wall-grazer",
+    "model": "LW06",
+    "destination": "/products/lw06"
+  },
+  {
+    "source": "https://www.olympialed.com/aw06-flexible-led-wall-grazer/",
+    "type": "product family",
+    "category": "wall-grazer",
+    "model": "AW06",
+    "destination": "/products/aw06"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=18722",
+    "type": "product family",
+    "category": "connectors",
+    "model": "PVC Injection Molded IP68",
+    "destination": "/products/pvc-injection-molded-ip68"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=18821",
+    "type": "product family",
+    "category": "connectors",
+    "model": "Silicone Injection Molded IP68",
+    "destination": "/products/silicone-injection-molded-ip68"
+  },
+  {
+    "source": "https://www.olympialed.com/?page_id=18846",
+    "type": "product family",
+    "category": "connectors",
+    "model": "DIY Connector",
+    "destination": "/products/diy-connector"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#53fccd5",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "TPS 5",
+    "destination": "/products/tps-5"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0a061e4",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Switch",
+    "destination": "/products/switch"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#daea35a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SDI",
+    "destination": "/products/sdi"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Repeat",
+    "destination": "/products/repeat"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LPCX",
+    "destination": "/products/lpcx"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LPC",
+    "destination": "/products/lpc"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "EXT",
+    "destination": "/products/ext"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "EDN",
+    "destination": "/products/edn"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2457f54",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "TB40",
+    "destination": "/products/tb40"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#436dcce",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "TB10 Plus",
+    "destination": "/products/tb10-plus"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#1abb3d8",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LG-C002",
+    "destination": "/products/lg-c002"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MT-TB10",
+    "destination": "/products/mt-tb10"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-CM12B",
+    "destination": "/products/mr-cm12b"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-A28A",
+    "destination": "/products/mr-a28a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-A28D",
+    "destination": "/products/mr-a28d"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-WT35",
+    "destination": "/products/mr-wt35"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3d328f9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-MC02HD",
+    "destination": "/products/mr-mc02hd"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c24a525",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "XB-809",
+    "destination": "/products/xb-809"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60ddd90",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "T-790",
+    "destination": "/products/t-790"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#f66af1a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "XB-C8",
+    "destination": "/products/xb-c8"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#787a97b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "S-8000L",
+    "destination": "/products/s-8000l"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#5eaf04f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "XB-C100",
+    "destination": "/products/xb-c100"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0a900e6",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LG-SA-08",
+    "destination": "/products/lg-sa-08"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#aa9f94b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LG-SA-12 & LG-SA-13",
+    "destination": "/products/lg-sa-12-lg-sa-13"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#473aea9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LG-SA-31",
+    "destination": "/products/lg-sa-31"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#daea35a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LG-SA-09",
+    "destination": "/products/lg-sa-09"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#53fccd5",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "DMX-SPI-202",
+    "destination": "/products/dmx-spi-202"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0a061e4",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "DMX-SPI-203",
+    "destination": "/products/dmx-spi-203"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#eac29c3",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LT-DMX-1809",
+    "destination": "/products/lt-dmx-1809"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "STICK-GU2",
+    "destination": "/products/stick-gu2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "STICK-GA2",
+    "destination": "/products/stick-ga2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "STICK-CW4",
+    "destination": "/products/stick-cw4"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "STICK-DE3",
+    "destination": "/products/stick-de3"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SLESA-U9",
+    "destination": "/products/slesa-u9"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3d328f9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SLESA-U10",
+    "destination": "/products/slesa-u10"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c24a525",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SLESA-U11",
+    "destination": "/products/slesa-u11"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60ddd90",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ESA Pro2",
+    "destination": "/products/esa-pro2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "UX8",
+    "destination": "/products/ux8"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "EX4S",
+    "destination": "/products/ex4s"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "WIFI-104",
+    "destination": "/products/wifi-104"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "WP-803H",
+    "destination": "/products/wp-803h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "WP-804",
+    "destination": "/products/wp-804"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3d328f9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "D4-F",
+    "destination": "/products/d4-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c24a525",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "D4-L",
+    "destination": "/products/d4-l"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60ddd90",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LT-820-5A",
+    "destination": "/products/lt-820-5a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#20386d7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "DIN-121",
+    "destination": "/products/din-121"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6f188ae",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "LT-123",
+    "destination": "/products/lt-123"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6332c8c",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-4",
+    "destination": "/products/rdm-amp-4"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7518613",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-4E",
+    "destination": "/products/rdm-amp-4e"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#e8ded2e",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-8",
+    "destination": "/products/rdm-amp-8"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#4d2a669",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-8E",
+    "destination": "/products/rdm-amp-8e"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#5e6d755",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-16",
+    "destination": "/products/rdm-amp-16"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c7e3c17",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-16E",
+    "destination": "/products/rdm-amp-16e"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#01cce18",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "RDM-AMP-2",
+    "destination": "/products/rdm-amp-2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3f84f16",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "WIFI-RDM01",
+    "destination": "/products/wifi-rdm01"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "T-790",
+    "destination": "/products/t-790"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-A28A",
+    "destination": "/products/mr-a28a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MR-A28D",
+    "destination": "/products/mr-a28d"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MADRIX AURA",
+    "destination": "/products/madrix-aura"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MADRIX NEBULA",
+    "destination": "/products/madrix-nebula"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3d328f9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MADRIX STELLA",
+    "destination": "/products/madrix-stella"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7083f6d",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MADRIX ORION",
+    "destination": "/products/madrix-orion"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#e2a761d",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MADRIX LUNA",
+    "destination": "/products/madrix-luna"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c24a525",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Basic Versin Key",
+    "destination": "/products/basic-versin-key"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60ddd90",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Madrix 5 Entry Version Key",
+    "destination": "/products/madrix-5-entry-version-key"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#93880d6",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Professional Versin Key",
+    "destination": "/products/professional-versin-key"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#ee40b71",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Ultimate Version Key",
+    "destination": "/products/ultimate-version-key"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "S100-16T2S",
+    "destination": "/products/s100-16t2s"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "S1730S-S8P4S-A1",
+    "destination": "/products/s1730s-s8p4s-a1"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "Cat 6",
+    "destination": "/products/cat-6"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#96e416b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "XDN-DMX512-SC",
+    "destination": "/products/xdn-dmx512-sc"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#d8457ca",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HTB-3100A/B-25KM",
+    "destination": "/products/htb-3100a-b-25km"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "FR-CNR-DMX-2T1",
+    "destination": "/products/fr-cnr-dmx-2t1"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "FR-CNR-SPI-2T1",
+    "destination": "/products/fr-cnr-spi-2t1"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-CNR-512C3-1T2",
+    "destination": "/products/mid-cnr-512c3-1t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#68a6e1f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-CNR-8904-1T2",
+    "destination": "/products/mid-cnr-8904-1t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#8fb1bc6",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-CNR-512C3-2T2",
+    "destination": "/products/mid-cnr-512c3-2t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#9c55d08",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-CNR-8904-2T2",
+    "destination": "/products/mid-cnr-8904-2t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#f60918f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-M-2C-18AWG-D6-W",
+    "destination": "/products/m12-m-2c-18awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#18d7c91",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-M-3C-20AWG-D6-W",
+    "destination": "/products/m12-m-3c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#531a30d",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-M-4C-20AWG-D6-W",
+    "destination": "/products/m12-m-4c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#731eafd",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-M-5C-18AWG+24AWG-D6-W",
+    "destination": "/products/m12-m-5c-18awg-24awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#63bd170",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-M-5C-20AWG-D6-W",
+    "destination": "/products/m12-m-5c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#fdabd38",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-2C-18AWG-D6-W",
+    "destination": "/products/m12-f-2c-18awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7bf4174",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-3C-18AWG-D6-W",
+    "destination": "/products/m12-f-3c-18awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#001e52f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-4C-20AWG-D6-W",
+    "destination": "/products/m12-f-4c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#476b63a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-5C-18AWG+24AWG-D6-W",
+    "destination": "/products/m12-f-5c-18awg-24awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#32d0156",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-5C-20AWG-D6-W",
+    "destination": "/products/m12-f-5c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a66b4e7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-F-5C-20AWG-D6-W",
+    "destination": "/products/m12-f-5c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#1d08364",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-EXT-3C- 20AWG-D6-W",
+    "destination": "/products/m12-ext-3c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60a250f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-EXT-4C- 20AWG-D6-W",
+    "destination": "/products/m12-ext-4c-20awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#b0a3a6b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-EXT-5C- 18AWG+24AWG-D6-W",
+    "destination": "/products/m12-ext-5c-18awg-24awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#b40a13a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "M12-EXT-5C- 18AWG+24AWG-D6-W",
+    "destination": "/products/m12-ext-5c-18awg-24awg-d6-w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0b65d09",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-2P-M",
+    "destination": "/products/sa12-b-2p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#b62b5fa",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-3P-M",
+    "destination": "/products/sa12-b-3p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#ce40b1b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-4P-M",
+    "destination": "/products/sa12-b-4p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#cc0ebe0",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-5P-M",
+    "destination": "/products/sa12-b-5p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6814d46",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-2P-F",
+    "destination": "/products/sa12-b-2p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#fffad8a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-3P-F",
+    "destination": "/products/sa12-b-3p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#fa106a4",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-4P-F",
+    "destination": "/products/sa12-b-4p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#1005796",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SA12-B-5P-F",
+    "destination": "/products/sa12-b-5p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#206e086",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-2P-M",
+    "destination": "/products/sq15-b-2p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#53edb81",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-3P-M",
+    "destination": "/products/sq15-b-3p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2158fa0",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-4P-M",
+    "destination": "/products/sq15-b-4p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#993515a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-5P-M",
+    "destination": "/products/sq15-b-5p-m"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#87eaca5",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-2P-F",
+    "destination": "/products/sq15-b-2p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#d98855f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-3P-F",
+    "destination": "/products/sq15-b-3p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6cc8889",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-4P-F",
+    "destination": "/products/sq15-b-4p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#8f152a1",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SQ15-B-5P-F",
+    "destination": "/products/sq15-b-5p-f"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3e84c8f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-SIG-CNR-512C3-1T2",
+    "destination": "/products/mid-sig-cnr-512c3-1t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#98a86d6",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "MID-SIG-CNR- 8904-1T2",
+    "destination": "/products/mid-sig-cnr-8904-1t2"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-40H",
+    "destination": "/products/hlg-40h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-60H",
+    "destination": "/products/hlg-60h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-80H",
+    "destination": "/products/hlg-80h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-100H",
+    "destination": "/products/hlg-100h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7781737",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-120H",
+    "destination": "/products/hlg-120h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3d328f9",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-150H",
+    "destination": "/products/hlg-150h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c24a525",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-185H",
+    "destination": "/products/hlg-185h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#60ddd90",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-240H",
+    "destination": "/products/hlg-240h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#20386d7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-320H",
+    "destination": "/products/hlg-320h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6f188ae",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-480H",
+    "destination": "/products/hlg-480h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6332c8c",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "HLG-600H",
+    "destination": "/products/hlg-600h"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#7518613",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-75",
+    "destination": "/products/elg-75"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#e8ded2e",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-100",
+    "destination": "/products/elg-100"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#4d2a669",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-150",
+    "destination": "/products/elg-150"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#5e6d755",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-200",
+    "destination": "/products/elg-200"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#c7e3c17",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-240",
+    "destination": "/products/elg-240"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3f84f16",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "ELG-300",
+    "destination": "/products/elg-300"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SE-450",
+    "destination": "/products/se-450"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SE-600",
+    "destination": "/products/se-600"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SE-1000",
+    "destination": "/products/se-1000"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#05ec05a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "SE-1500",
+    "destination": "/products/se-1500"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-80W",
+    "destination": "/products/kvx-1c-a-80w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-80W",
+    "destination": "/products/kvx-2c-a-80w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-80W",
+    "destination": "/products/kvx-3c-a-80w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#91da777",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-80W",
+    "destination": "/products/kvx-4c-a-80w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#848de0a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-80W",
+    "destination": "/products/kvx-5c-a-80w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2ffa06f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-100W",
+    "destination": "/products/kvx-1c-a-100w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0319fec",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-100W",
+    "destination": "/products/kvx-2c-a-100w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0e73aaa",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-100W",
+    "destination": "/products/kvx-3c-a-100w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#0566022",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-100W",
+    "destination": "/products/kvx-4c-a-100w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#581af54",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-100W",
+    "destination": "/products/kvx-5c-a-100w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#fb1c47a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-120W",
+    "destination": "/products/kvx-1c-a-120w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3ebbb9e",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-120W",
+    "destination": "/products/kvx-2c-a-120w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#1a0ccf5",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-120W",
+    "destination": "/products/kvx-3c-a-120w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#bf69731",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-120W",
+    "destination": "/products/kvx-4c-a-120w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#aa39eac",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-120W",
+    "destination": "/products/kvx-5c-a-120w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6e509a7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-150W",
+    "destination": "/products/kvx-1c-a-150w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#db75332",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-150W",
+    "destination": "/products/kvx-2c-a-150w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#71e0fd5",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-150W",
+    "destination": "/products/kvx-3c-a-150w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2bcbaa3",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-150W",
+    "destination": "/products/kvx-4c-a-150w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#408ab76",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-150W",
+    "destination": "/products/kvx-5c-a-150w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#8ccdd61",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-200W",
+    "destination": "/products/kvx-1c-a-200w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#40e3359",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-200W",
+    "destination": "/products/kvx-2c-a-200w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#cd75478",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-200W",
+    "destination": "/products/kvx-3c-a-200w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#6dd48b1",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-200W",
+    "destination": "/products/kvx-4c-a-200w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#3719c53",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-200W",
+    "destination": "/products/kvx-5c-a-200w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#49f21f0",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-1C-A-300W",
+    "destination": "/products/kvx-1c-a-300w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#bd87fbc",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-2C-A-300W",
+    "destination": "/products/kvx-2c-a-300w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#50722d4",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-3C-A-300W",
+    "destination": "/products/kvx-3c-a-300w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#e73d24b",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-4C-A-300W",
+    "destination": "/products/kvx-4c-a-300w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a3c5d54",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVX-5C-A-300W",
+    "destination": "/products/kvx-5c-a-300w"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KV-100-DP2A",
+    "destination": "/products/kv-100-dp2a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KV-120-DP2A",
+    "destination": "/products/kv-120-dp2a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KV-150-DP2A",
+    "destination": "/products/kv-150-dp2a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#91da777",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KV-200-DP2A",
+    "destination": "/products/kv-200-dp2a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#848de0a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KV-300-DP2A",
+    "destination": "/products/kv-300-dp2a"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVP-80-TDL",
+    "destination": "/products/kvp-80-tdl"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVP-100-TDL",
+    "destination": "/products/kvp-100-tdl"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVP-120-TDL",
+    "destination": "/products/kvp-120-tdl"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#91da777",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVP-150-TDL",
+    "destination": "/products/kvp-150-tdl"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#848de0a",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "KVP-200-TDL",
+    "destination": "/products/kvp-200-tdl"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#86d1e95",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "NDR-75",
+    "destination": "/products/ndr-75"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#2eab98f",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "NDR-120",
+    "destination": "/products/ndr-120"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#a9994f7",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "NDR-240",
+    "destination": "/products/ndr-240"
+  },
+  {
+    "source": "https://www.olympialed.com/control-accessories/#91da777",
+    "type": "embedded control/power item",
+    "category": "control",
+    "model": "NDR-480",
+    "destination": "/products/ndr-480"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-1",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Aluminum",
+    "destination": "/products/mounting-01"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-2",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Hybrid",
+    "destination": "/products/mounting-02"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-3",
+    "type": "product family",
+    "category": "mounting",
+    "model": "316 stainless steel",
+    "destination": "/products/mounting-03"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-4",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Hybrid",
+    "destination": "/products/mounting-04"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-5",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Stainless steel",
+    "destination": "/products/mounting-05"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-6",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Bendable aluminum",
+    "destination": "/products/mounting-06"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-7",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Plastic",
+    "destination": "/products/mounting-07"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-8",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Cable hiding",
+    "destination": "/products/mounting-08"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-9",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Anti-drop",
+    "destination": "/products/mounting-09"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-10",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Bendable aluminum",
+    "destination": "/products/mounting-10"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-11",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Clips",
+    "destination": "/products/mounting-11"
+  },
+  {
+    "source": "https://www.olympialed.com/product-mounting/#selection-12",
+    "type": "product family",
+    "category": "mounting",
+    "model": "Plastic clips",
+    "destination": "/products/mounting-12"
+  }
+]

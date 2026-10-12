@@ -10,5 +10,5 @@ out/
 
 !.env.example
 .playwright-mcp/
-design/
+/design/
 dist.zip

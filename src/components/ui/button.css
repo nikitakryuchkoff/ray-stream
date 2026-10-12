@@ -1,0 +1,74 @@
+/* Native-CSS adaptation of the MIT shadcn/ui Button. Raystream touch size is 44px. */
+.button {
+  --button-bg:transparent;
+  --button-fg:var(--ink);
+  --button-hover:var(--surface);
+  --button-pressed:var(--line);
+  display:inline-flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:44px;
+  max-width:100%;
+  min-width:0;
+  width:auto;
+  padding:11px 16px;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:var(--button-bg);
+  color:var(--button-fg);
+  font-size:14px;
+  line-height:20px;
+  font-weight:500;
+  font-stretch:100%;
+  letter-spacing:0;
+  white-space:nowrap;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:none;
+  transform:none;
+  transition:background-color 150ms ease-out,border-color 150ms ease-out,color 150ms ease-out;
+}
+.button[data-variant=default] { --button-bg:#24282b; --button-fg:#f6f7f7; --button-hover:#353b3f; --button-pressed:#171c20; }
+.button[data-variant=destructive] { --button-bg:var(--error); --button-fg:#fff; --button-hover:#91372f; --button-pressed:#7a2f28; }
+.button[data-variant=outline] { border-color:#858c91; }
+.button[data-variant=secondary] { --button-bg:#e9eced; --button-hover:#dce1e4; }
+.button[data-variant=link] { --button-hover:transparent; --button-pressed:transparent; padding-right:0; padding-left:0; text-decoration-thickness:1px; text-underline-offset:4px; }
+.hero .button[data-variant=default] { --button-bg:#293238; --button-hover:#3a444b; --button-pressed:#20272c; }
+.project-cta .button[data-variant=secondary] { --button-bg:#3c464d; --button-fg:#f6f7f7; --button-hover:#4a555d; --button-pressed:#303a41; }
+.button[data-size=sm] { padding-right:12px; padding-left:12px; }
+.button[data-size=lg] { padding-right:24px; padding-left:24px; }
+.button[data-size=icon] { width:44px; height:44px; padding:0; }
+.button.button-wrap { flex-shrink:1; height:auto; white-space:normal; overflow-wrap:anywhere; }
+.button .icon { width:14px; height:14px; flex:none; pointer-events:none; transform:none; transition:none; }
+.button:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+.hero .button:focus-visible,.project-cta .button:focus-visible { outline-color:#f6f7f7; }
+.button[aria-invalid=true] { border-color:var(--error); }
+.button:disabled,.button[aria-disabled=true] { opacity:.5; pointer-events:none; cursor:not-allowed; }
+.button.loading:disabled { opacity:1; }
+.button-spinner { display:inline-flex; flex:none; animation:button-spin 1s linear infinite; }
+.submit-button { min-width:184px; }
+@keyframes button-spin { to { transform:rotate(360deg); } }
+@media(hover:hover) and (pointer:fine) {
+  .button:hover:not(:disabled):not([aria-disabled=true]) { background:var(--button-hover); }
+  .button[data-variant=link]:hover:not(:disabled) { text-decoration:underline; }
+}
+.button:active:not(:disabled):not([aria-disabled=true]) { background:var(--button-pressed); }
+@media(max-width:760px) {
+  .button { height:auto; white-space:normal; overflow-wrap:anywhere; }
+}
+@media(prefers-contrast:more) {
+  .button:focus-visible { outline-width:3px; }
+  .button[data-variant=outline] { border-color:var(--ink); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .button { transition:none; }
+  .button-spinner { animation:none; }
+}
+@media(forced-colors:active) {
+  .button { forced-color-adjust:auto; color:ButtonText!important; background:ButtonFace!important; border:1px solid ButtonText!important; }
+  .button:focus-visible { outline-color:Highlight; }
+  .button:disabled,.button[aria-disabled=true] { opacity:1; color:GrayText!important; }
+  .button.loading:disabled { color:ButtonText!important; }
+}

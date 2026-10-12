@@ -22,6 +22,7 @@ if (!is_array($payload)) {
 $name = trim((string)($payload['name'] ?? ''));
 $email = trim((string)($payload['email'] ?? ''));
 $message = trim((string)($payload['message'] ?? ''));
+$model = trim((string)($payload['model'] ?? ''));
 
 if ($name === '' || mb_strlen($name) < 2 || mb_strlen($name) > 80) {
     http_response_code(422);
@@ -41,18 +42,24 @@ if ($message === '' || mb_strlen($message) > 400) {
     exit;
 }
 
-$recipient = getenv('CONTACT_EMAIL') ?: 'almazovrf@gmail.com';
-$subject = 'RayStream website contact form';
+if (mb_strlen($model) > 160 || preg_match('/[\r\n]/', $model)) {
+    http_response_code(422);
+    echo json_encode(['ok' => false, 'error' => 'Invalid model']);
+    exit;
+}
+
+$recipient = getenv('CONTACT_EMAIL') ?: 'info@raystream.hk';
+$subject = 'Raystream enquiry' . ($model !== '' ? ': ' . $model : '');
 $safeName = str_replace(["\r", "\n"], '', $name);
 $safeEmail = str_replace(["\r", "\n"], '', $email);
-$host = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? 'localhost'));
-$from = 'no-reply@' . preg_replace('/^www\./i', '', $host);
+$from = getenv('CONTACT_FROM') ?: 'Raystream <no-reply@raystream.hk>';
 
 $bodyLines = [
     'New contact form request:',
     '',
     'Name: ' . $safeName,
     'Email: ' . $safeEmail,
+    'Selected equipment: ' . ($model !== '' ? $model : 'General enquiry'),
     '',
     'Message:',
     $message,
@@ -61,7 +68,7 @@ $bodyLines = [
 $headers = [
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
-    'From: RayStream <' . $from . '>',
+    'From: ' . $from,
     'Reply-To: ' . $safeEmail,
 ];
 

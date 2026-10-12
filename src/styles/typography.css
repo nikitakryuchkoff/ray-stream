@@ -1,0 +1,104 @@
+/* One local Latin variable face for the interface; the genuine wordmark keeps Inter. */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url('../../node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-standard-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2');
+}
+:root {
+  font-family: 'Instrument Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 1.65;
+  font-synthesis: none;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  letter-spacing: 0;
+}
+.brand { font-family: 'Inter', Arial, sans-serif; font-stretch: normal; line-height: 1; }
+
+h1, h2, h3 { font-weight: 500; text-wrap: balance; }
+h1, h2 { font-stretch: 95%; }
+h1 { font-size: clamp(42px, 5.82vw, 64px); line-height: 1.06; letter-spacing: -.035em; }
+h2 { font-size: clamp(34px, calc(4.118vw + 2.706px), 48px); line-height: 1.12; letter-spacing: -.03em; }
+h3 { font-size: 20px; line-height: 1.35; font-weight: 500; letter-spacing: -.02em; }
+p { font-size: 16px; line-height: 1.65; font-weight: 400; letter-spacing: 0; }
+.hero h1 { font-size: clamp(48px, calc(11.765vw - 41.41px), 88px); line-height: 1.04; letter-spacing: -.04em; }
+.hero p { font-size: 17px; line-height: 1.65; }
+.page-heading h1 { font-size: clamp(42px, calc(6.471vw - 7.18px), 64px); line-height: 1.06; letter-spacing: -.035em; }
+.product-info h1 { font-size: clamp(64px, calc(4.706vw + 28.235px), 80px); line-height: 1.02; letter-spacing: -.035em; }
+.product-info h1.long-model { font-size: clamp(36px, calc(4.706vw + .235px), 52px); line-height: 1.12; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.product-fullname { font-size: clamp(25px, calc(1.471vw + 13.82px), 30px); line-height: 1.22; font-weight: 400; font-stretch: 100%; letter-spacing: -.025em; }
+.contact-copy { container-type: inline-size; }
+.contact-copy h1 { font-size: clamp(52px, 12.1cqw, 68px); line-height: 1.08; letter-spacing: -.035em; }
+.contact-email { font-size: 25px; line-height: 1.4; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.category-card h3 { font-size: 23px; line-height: 1.3; font-weight: 500; letter-spacing: -.02em; }
+.product-copy h3 { font-size: 24px; line-height: 1.25; font-weight: 500; letter-spacing: -.02em; }
+.product-copy h3 .model-name { font: inherit; letter-spacing: inherit; }
+.category-card p, .product-copy p, .accessory-card p { font-size: 14px; line-height: 1.55; letter-spacing: 0; }
+.accessory-card h3, .system-row h3 { font-size: 20px; line-height: 1.35; font-weight: 500; font-stretch: 100%; letter-spacing: -.015em; }
+.eyebrow, .system-row>div>span { font-size: 10px; line-height: 1.5; font-weight: 500; letter-spacing: .1em; }
+.breadcrumb, .gallery-caption, .application-wide p, .footer-bottom, .hero-footer, .photo-count,
+.mobile-swipe-note, .table-help, .form-note, .product-info .small-note { font-size: 12px; line-height: 1.55; font-weight: 400; letter-spacing: 0; }
+.footer-nav { font-size: 13px; line-height: 1.55; }
+.footer-email { font-size: 19px; line-height: 1.4; letter-spacing: -.02em; }
+.aside-note p, .contact-guide p, .technical-heading p { font-size: 14px; line-height: 1.55; }
+.contact-guide h3 { font-size: 18px; line-height: 1.35; }
+.accessory-card .accessory-group { font-size: 12px; line-height: 1.55; letter-spacing: 0; }
+.spec-highlight strong { font-size: 22px; line-height: 1.25; font-weight: 500; letter-spacing: -.015em; }
+.spec-highlight span { font-size: 11px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
+.spec-group h3 { font-size: 16px; line-height: 1.4; font-weight: 500; letter-spacing: -.01em; }
+.spec-group h3>span { font-size: 12px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+.table-scroll table { font-size: 13px; line-height: 1.6; font-weight: 400; letter-spacing: 0; }
+.table-scroll th { font-size: 12px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
+.table-scroll td { font-size: 13px; line-height: 1.6; font-weight: 400; letter-spacing: 0; }
+.table-scroll .numeric { text-align: right; }
+.table-scroll, .catalog-toolbar>span, .aside-link span, .spec-group, .spec-highlight strong,
+.photo-count, .message-count, .more-results p { font-variant-numeric: tabular-nums lining-nums; }
+.model-selection strong { font-size: 20px; line-height: 1.4; font-weight: 500; letter-spacing: 0; }
+.form-status { font-size: 14px; line-height: 1.6; }
+.form-status strong { font-weight: 600; }
+
+@media(max-width:760px) {
+  h1, .page-heading h1 { font-size: 42px; line-height: 1.08; letter-spacing: -.03em; }
+  h2 { font-size: 34px; line-height: 1.18; letter-spacing: -.025em; }
+  p { font-size: 15px; line-height: 1.65; }
+
+  .hero h1 { font-size: 48px; line-height: 1.07; letter-spacing: -.035em; }
+  .hero p { font-size: 16px; }
+  .product-info h1 { font-size: 64px; line-height: 1.03; letter-spacing: -.03em; }
+  .product-info h1.long-model { font-size: 36px; line-height: 1.15; letter-spacing: -.015em; }
+  .product-fullname { font-size: 25px; line-height: 1.26; letter-spacing: -.02em; }
+  .contact-copy h1 { font-size: 44px; line-height: 1.08; letter-spacing: -.03em; }
+  .contact-email { font-size: 23px; line-height: 1.4; }
+  .category-card h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.015em; }
+  .product-copy h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.015em; }
+  .accessory-card h3, .system-row h3 { font-size: 18px; line-height: 1.35; letter-spacing: -.01em; }
+  .category-card p, .product-copy p { font-size: 13px; line-height: 1.6; }
+  .accessory-card p { font-size: 14px; line-height: 1.6; }
+  .eyebrow, .system-row>div>span { letter-spacing: .1em; }
+  .breadcrumb, .gallery-caption, .application-wide p, .footer-bottom, .hero-footer, .photo-count,
+  .mobile-swipe-note, .table-help, .product-info .small-note { font-size: 11px; line-height: 1.55; }
+  .aside-note p, .contact-guide p, .technical-heading p { font-size: 13px; line-height: 1.6; }
+  .accessory-card .accessory-group { font-size: 12px; line-height: 1.55; }
+  .spec-highlight strong { font-size: 20px; letter-spacing: -.01em; }
+  .spec-group h3 { font-size: 15px; letter-spacing: 0; }
+}
+
+@media(max-width:350px) {
+  .hero h1 { font-size: 41px; }
+  h1, .page-heading h1, .contact-copy h1 { font-size: 38px; }
+  .product-copy h3 { font-size: 18px; }
+  .category-card p, .product-copy p { font-size: 12px; }
+  .model-selection strong { font-size: 18px; }
+}
