@@ -9,11 +9,11 @@ async function call(method, body) {
 }
 (async () => {
   try {
-    const enquiry = { name: 'Test Person', email: 'test@example.com', message: 'Please confirm project compatibility.', model: 'SF24' };
+    const enquiry = { name: 'Test Person', email: 'test@example.com', message: 'Please confirm project compatibility.', model: 'RS24' };
     assert.equal((await call('GET')).code, 405);
     assert.equal((await call('POST', '{')).code, 400);
     assert.equal((await call('POST', { ...enquiry, email: 'invalid' })).code, 422);
-    assert.equal((await call('POST', { ...enquiry, model: 'SF24\r\nInjected' })).code, 422);
+    assert.equal((await call('POST', { ...enquiry, model: 'RS24\r\nInjected' })).code, 422);
     delete process.env.RESEND_API_KEY;
     delete process.env.CONTACT_FROM;
     assert.equal((await call('POST', enquiry)).code, 503);
@@ -27,8 +27,8 @@ async function call(method, body) {
     assert.equal(accepted.body.ok, true);
     assert.equal(sent.to, 'info@raystream.hk');
     assert.equal(sent.reply_to, enquiry.email);
-    assert.ok(sent.subject.includes('SF24'));
-    assert.ok(sent.text.includes('Selected equipment: SF24'));
+    assert.ok(sent.subject.includes('RS24'));
+    assert.ok(sent.text.includes('Selected equipment: RS24'));
     global.fetch = async () => ({ ok: false });
     assert.equal((await call('POST', enquiry)).code, 502);
     console.log('PASS: method, JSON, validation, model injection, missing configuration, recipient/model payload, provider acceptance and provider failure. No real email sent.');
